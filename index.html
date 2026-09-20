@@ -81,6 +81,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--blue)}
          <option value="client">Cliente</option>
          <option value="business">Empresa / profissional</option>
        </select>
+       <div class="small muted" style="margin-top:6px">O tipo de conta é definido pela opção escolhida na tela inicial.</div>
      </div>
    </div>
    <div class="field"><label>E-mail</label><input id="authEmail" type="email" autocomplete="email" placeholder="voce@email.com"></div>
@@ -166,7 +167,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--blue)}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./config.js"></script>
 <script>
-let db=null, session=null, profile=null, business=null, selectedCategory='Casa', authMode='login', realtimeChannel=null;
+let db=null, session=null, profile=null, business=null, selectedCategory='Casa', authMode='login', realtimeChannel=null, pendingRole='client';
 
 function configReady(){
  const c=window.LUCAS_AGORA_CONFIG||{};
@@ -206,6 +207,13 @@ function setAuthMode(mode){
  document.getElementById('tabRegister').classList.toggle('active',mode==='register');
  document.getElementById('registerFields').classList.toggle('hidden',mode!=='register');
  document.getElementById('authAction').textContent=mode==='login'?'ENTRAR':'CRIAR CONTA';
+ const roleSelect=document.getElementById('authRole');
+ if(mode==='register'){
+   roleSelect.value=pendingRole;
+   roleSelect.disabled=true;
+ }else{
+   roleSelect.disabled=false;
+ }
 }
 async function submitAuth(){
  if(!db){toast('Configure o Supabase primeiro.');return}
@@ -244,8 +252,14 @@ async function loadProfile(){
  renderAccount();
 }
 async function routeRole(role,nav){
+ pendingRole=role;
  if(!configReady()){show('account',nav);toast('Primeiro conecte o Supabase no config.js.');return}
- if(!session){show('auth',nav);setAuthMode('login');return}
+ if(!session){
+   document.getElementById('authRole').value=role;
+   show('auth',nav);
+   setAuthMode('login');
+   return;
+ }
  if(!profile)await loadProfile();
  if(role==='client'){
    if(profile?.role!=='client'){toast('Esta conta é de empresa.');return}
