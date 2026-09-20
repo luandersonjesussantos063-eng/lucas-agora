@@ -1,0 +1,9 @@
+{
+  "name": "Lucas Agora",
+  "short_name": "Lucas Agora",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "description": "Clientes pedem e empresas de Lucas do Rio Verde respondem."
+}
