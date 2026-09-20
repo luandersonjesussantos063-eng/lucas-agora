@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Lucas Agora — clientes pedem, empresas respondem.">
+<link rel="manifest" href="manifest.json">
+<title>Lucas Agora</title>
+<style>
+:root{
+ --bg:#07111f;--card:#0d1b2d;--card2:#13243a;--line:#233b59;--text:#f7fbff;
+ --muted:#9fb1c7;--green:#42d5a2;--blue:#58a6ff;--red:#ff6b6b;--yellow:#ffc857;
+}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 15% 0,rgba(88,166,255,.18),transparent 30%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit} button{cursor:pointer}
+.app{width:min(100%,490px);min-height:100vh;margin:auto;padding-bottom:92px}
+header{position:sticky;top:0;z-index:30;padding:14px 16px;background:rgba(7,17,31,.92);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.06)}
+.brand{display:flex;justify-content:space-between;align-items:center}.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px}
+.mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),var(--blue));color:#041018}
+.badge{border:1px solid var(--line);border-radius:999px;padding:6px 9px;color:#b8c8db;font-size:11px}
+main{padding:16px}.hero,.card,.authBox,.plan{background:linear-gradient(145deg,rgba(66,213,162,.06),rgba(88,166,255,.03)),var(--card);border:1px solid rgba(255,255,255,.07);border-radius:22px;padding:18px;margin-bottom:11px}
+.hero h1{font-size:29px;line-height:1.05;margin:10px 0 8px}.hero p,.muted{color:var(--muted)}
+.live{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:#b8ffda;font-weight:900}.dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 9px var(--green)}
+.roleGrid,.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.roleGrid{margin-top:16px}
+.role,.cat{color:var(--text);background:var(--card2);border:1px solid var(--line);border-radius:17px;padding:15px;text-align:left}.role{min-height:116px}.role span,.cat span{display:block;font-size:26px;margin-bottom:7px}.role small,.cat small{color:var(--muted)}
+.cat.active{outline:2px solid var(--green);border-color:transparent}
+.section{margin-top:20px}.sectionTitle{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.sectionTitle h2{margin:0;font-size:17px}.sectionTitle small{color:var(--muted)}
+.field{margin-bottom:12px} label{display:block;font-size:12px;color:#cad7e8;margin-bottom:6px}
+input,textarea,select{width:100%;border:1px solid var(--line);background:#091625;color:var(--text);border-radius:14px;padding:13px 14px;outline:none}textarea{min-height:94px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--blue)}
+.btn{width:100%;border:0;border-radius:14px;padding:14px 15px;font-weight:900;background:linear-gradient(135deg,var(--green),#34ba8c);color:#04120e}.btn.secondary{background:#152842;color:#dce9f8;border:1px solid var(--line)}.btn.blue{background:linear-gradient(135deg,var(--blue),#3d7cff);color:#fff}.btn.red{background:linear-gradient(135deg,#ff7979,#ff5656);color:white}
+.row{display:flex;gap:8px}.row .btn{flex:1}.small{font-size:12px}.hidden{display:none!important}.sep{height:1px;background:var(--line);margin:13px 0}
+.request{border-left:4px solid var(--blue);background:var(--card);border-radius:18px;padding:14px;margin-bottom:10px;border-top:1px solid rgba(255,255,255,.05);border-right:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}.request.urgent{border-left-color:var(--red)}.request h3{margin:5px 0 7px;font-size:15px}.meta{font-size:12px;color:var(--muted);line-height:1.55}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.tag{font-size:11px;background:#13263f;border:1px solid #25415f;color:#cbd9e8;border-radius:999px;padding:5px 8px}
+.offer{background:#0a1728;border:1px solid var(--line);border-radius:16px;padding:13px;margin-top:9px}.offerTop{display:flex;justify-content:space-between;gap:12px}.offerTop b:last-child{color:var(--green)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metric{background:#0a1727;border:1px solid var(--line);border-radius:15px;padding:11px}.metric b{display:block;font-size:18px}.metric small{color:var(--muted)}
+.bottom{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,490px);z-index:40;background:rgba(7,17,31,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+.nav{background:transparent;border:0;color:#8fa4bb;border-radius:12px;padding:8px 4px;font-size:11px}.nav span{display:block;font-size:18px;margin-bottom:2px}.nav.active{background:#13243a;color:white}
+.toast{position:fixed;bottom:97px;left:50%;transform:translateX(-50%) translateY(18px);width:min(90%,430px);background:#effff8;color:#063727;border-radius:14px;padding:12px 14px;font-weight:800;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:60}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.topback{border:0;background:transparent;color:#b9c7d8;padding:0;margin-bottom:12px}.empty{text-align:center;padding:27px 14px;color:var(--muted)}
+.statusLine{display:flex;justify-content:space-between;align-items:center;gap:12px}.switch{width:56px;height:30px;border-radius:999px;border:0;background:#2a3c53;position:relative;padding:3px}.switch:after{content:"";position:absolute;width:24px;height:24px;left:3px;top:3px;background:white;border-radius:50%;transition:.2s}.switch.on{background:var(--green)}.switch.on:after{left:29px}
+.authTabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px}.authTab{border:1px solid var(--line);background:#12243a;color:#aebed1;border-radius:12px;padding:11px}.authTab.active{background:#1b3452;color:white;border-color:var(--blue)}
+.notice{border:1px dashed #315271;background:#0b192b;border-radius:16px;padding:12px;color:#cad8e9;font-size:12px;line-height:1.5}.price{font-size:25px;font-weight:900;margin:8px 0}.plan{position:relative}.plan.best{border-color:var(--green)}.ribbon{position:absolute;right:12px;top:12px;background:var(--green);color:#04120e;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900}.plan ul{padding-left:18px;color:#cbd7e7;font-size:13px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo"><div class="mark">LA</div>Lucas Agora</div><div class="badge" id="headerBadge">ONLINE V3</div></div></header>
+<main>
+
+<section id="home">
+ <div class="hero">
+   <div class="live"><span class="dot"></span> CONECTANDO A CIDADE</div>
+   <h1>O que você precisa agora?</h1>
+   <p>O cliente publica. Empresas disponíveis respondem. O cliente escolhe.</p>
+   <div class="roleGrid">
+     <button class="role" onclick="routeRole('client')"><span>🙋‍♂️</span><b>Sou cliente</b><br><small>Quero pedir algo.</small></button>
+     <button class="role" onclick="routeRole('business')"><span>🏪</span><b>Sou empresa</b><br><small>Quero receber clientes.</small></button>
+   </div>
+ </div>
+ <div class="section">
+   <div class="card"><b>⚡ Preciso Agora</b><div class="small muted">Pedidos urgentes podem aparecer imediatamente para empresas conectadas.</div></div>
+   <div class="card"><b>💬 Empresas fazem propostas</b><div class="small muted">Preço, tempo e mensagem ficam reunidos no pedido.</div></div>
+   <div class="card"><b>⭐ Você escolhe</b><div class="small muted">O fechamento fica com o cliente.</div></div>
+ </div>
+</section>
+
+<section id="auth" class="hidden">
+ <button class="topback" onclick="show('home')">← Voltar</button>
+ <div class="authBox">
+   <div class="authTabs">
+     <button id="tabLogin" class="authTab active" onclick="setAuthMode('login')">Entrar</button>
+     <button id="tabRegister" class="authTab" onclick="setAuthMode('register')">Criar conta</button>
+   </div>
+   <div id="registerFields" class="hidden">
+     <div class="field"><label>Seu nome / nome responsável</label><input id="authName" placeholder="Seu nome"></div>
+     <div class="field">
+       <label>Quero começar como</label>
+       <select id="authRole">
+         <option value="client">Cliente</option>
+         <option value="business">Empresa / profissional</option>
+       </select>
+       <div class="small muted" style="margin-top:6px">Depois você também poderá usar o outro modo com a mesma conta.</div>
+     </div>
+   </div>
+   <div class="field"><label>E-mail</label><input id="authEmail" type="email" autocomplete="email" placeholder="voce@email.com"></div>
+   <div class="field"><label>Senha</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="mínimo 6 caracteres"></div>
+   <button id="authAction" class="btn" onclick="submitAuth()">ENTRAR</button>
+   <div class="notice" style="margin-top:12px">Uma única conta pode pedir serviços como cliente e também oferecer serviços como empresa.</div>
+ </div>
+</section>
+
+<section id="client" class="hidden">
+ <button class="topback" onclick="show('home')">← Início</button>
+ <div class="sectionTitle"><h2>Novo pedido</h2><small id="clientHello"></small></div>
+ <div class="grid2">
+   <button class="cat active" data-cat="Casa" onclick="pickCat(this)"><span>🏠</span><b>Casa</b><br><small>Elétrica, hidráulica...</small></button>
+   <button class="cat" data-cat="Veículo" onclick="pickCat(this)"><span>🚗</span><b>Veículo</b><br><small>Mecânico, guincho...</small></button>
+   <button class="cat" data-cat="Comida" onclick="pickCat(this)"><span>🍕</span><b>Comida</b><br><small>Entrega e ofertas</small></button>
+   <button class="cat" data-cat="Tecnologia" onclick="pickCat(this)"><span>💻</span><b>Tecnologia</b><br><small>PC, celular, sites...</small></button>
+   <button class="cat" data-cat="Beleza" onclick="pickCat(this)"><span>💈</span><b>Beleza</b><br><small>Barbearia, salão...</small></button>
+   <button class="cat" data-cat="Outros" onclick="pickCat(this)"><span>➕</span><b>Outros</b><br><small>Qualquer necessidade</small></button>
+ </div>
+ <div class="card" style="margin-top:12px">
+   <div class="field"><label>O que você precisa?</label><textarea id="need" placeholder="Descreva o que precisa."></textarea></div>
+   <div class="field"><label>Quando?</label><select id="urgency"><option>Agora</option><option>Hoje</option><option>Esta semana</option><option>Só orçamento</option></select></div>
+   <div class="field"><label>Bairro</label><input id="bairro" placeholder="Ex.: Parque das Emas"></div>
+   <button class="btn" onclick="createRequest()">PUBLICAR PEDIDO</button>
+ </div>
+ <div class="section"><div class="sectionTitle"><h2>Meus pedidos</h2><small id="myCount">0</small></div><div id="myRequests"></div></div>
+</section>
+
+<section id="business" class="hidden">
+ <button class="topback" onclick="show('home')">← Início</button>
+ <div id="businessSetup" class="hidden">
+   <div class="sectionTitle"><h2>Complete sua empresa</h2><small>primeiro acesso</small></div>
+   <div class="card">
+     <div class="field"><label>Nome da empresa / profissional</label><input id="bizName" placeholder="Ex.: Carlos Elétrica"></div>
+     <div class="field"><label>Categoria</label><input id="bizCategory" placeholder="Ex.: Eletricista"></div>
+     <div class="field"><label>Bairro</label><input id="bizNeighborhood" placeholder="Ex.: Centro"></div>
+     <div class="field"><label>WhatsApp</label><input id="bizPhone" placeholder="(65) 99999-9999"></div>
+     <button class="btn" onclick="createBusiness()">CRIAR PERFIL DA EMPRESA</button>
+   </div>
+ </div>
+ <div id="businessPanel" class="hidden">
+   <div class="card">
+     <div class="statusLine"><div><div class="small muted">Empresa</div><h2 id="bizTitle" style="margin:4px 0 6px">—</h2><div class="small" id="availabilityText">🟢 Disponível agora</div></div><button id="availabilitySwitch" class="switch on" onclick="toggleAvailability()"></button></div>
+   </div>
+   <div class="metrics">
+     <div class="metric"><b id="metricRequests">0</b><small>Pedidos</small></div>
+     <div class="metric"><b id="metricResponses">0</b><small>Respondidos</small></div>
+     <div class="metric"><b id="metricOpen">0</b><small>Abertos</small></div>
+   </div>
+   <div class="section"><div class="sectionTitle"><h2>Pedidos da cidade</h2><small>tempo real</small></div><div id="businessRequests"></div></div>
+ </div>
+</section>
+
+<section id="plans" class="hidden">
+ <button class="topback" onclick="show('business')">← Voltar</button>
+ <div class="sectionTitle"><h2>Planos</h2><small>MVP</small></div>
+ <div class="plan"><h3>Grátis</h3><div class="price">R$ 0</div><ul><li>Perfil básico</li><li>Até 5 respostas/mês (regra comercial futura)</li><li>Pedidos próximos</li></ul></div>
+ <div class="plan best"><div class="ribbon">PRO</div><h3>Pro</h3><div class="price">R$ 49,90 <span class="small muted">/mês</span></div><ul><li>Respostas ilimitadas</li><li>Perfil completo</li><li>Mais destaque</li><li>Catálogo e promoções</li></ul></div>
+ <div class="plan"><h3>Premium</h3><div class="price">R$ 99,90 <span class="small muted">/mês</span></div><ul><li>Tudo do Pro</li><li>Prioridade no “Preciso Agora”</li><li>Destaque patrocinado</li><li>Relatórios</li></ul></div>
+</section>
+
+<section id="account" class="hidden">
+ <button class="topback" onclick="show('home')">← Voltar</button>
+ <div class="sectionTitle"><h2>Conta</h2><small id="accountRole"></small></div>
+ <div class="card">
+   <div id="accountInfo" class="small muted">Nenhuma conta conectada.</div>
+   <button id="logoutBtn" class="btn red hidden" style="margin-top:14px" onclick="logout()">SAIR DA CONTA</button>
+ </div>
+ <div class="notice">Nunca coloque a <b>service_role</b> ou uma secret key neste site. O navegador deve usar somente a publishable key.</div>
+</section>
+
+</main>
+<nav class="bottom">
+ <button class="nav active" onclick="show('home',this)"><span>🏠</span>Início</button>
+ <button class="nav" onclick="routeRole('client',this)"><span>🔎</span>Pedir</button>
+ <button class="nav" onclick="routeRole('business',this)"><span>🏪</span>Empresa</button>
+ <button class="nav" onclick="showAccount(this)"><span>👤</span>Conta</button>
+</nav>
+<div id="toast" class="toast"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+<script>
+let db=null, session=null, profile=null, business=null, selectedCategory='Casa', authMode='login', realtimeChannel=null, pendingRole='client';
+
+function configReady(){
+ const c=window.LUCAS_AGORA_CONFIG||{};
+ return c.SUPABASE_URL && !c.SUPABASE_URL.includes('COLE_') &&
+        c.SUPABASE_PUBLISHABLE_KEY && !c.SUPABASE_PUBLISHABLE_KEY.includes('COLE_');
+}
+async function init(){
+ if(!configReady()){
+   document.getElementById('headerBadge').textContent='FALTA CONFIGURAR';
+   toast('Falta preencher o config.js com os dados do Supabase.');
+   return;
+ }
+ db=window.supabase.createClient(
+   window.LUCAS_AGORA_CONFIG.SUPABASE_URL,
+   window.LUCAS_AGORA_CONFIG.SUPABASE_PUBLISHABLE_KEY
+ );
+ const {data}=await db.auth.getSession();
+ session=data.session||null;
+ if(session) await loadProfile();
+ db.auth.onAuthStateChange(async(_event,newSession)=>{
+   session=newSession;
+   if(session) await loadProfile(); else {profile=null;business=null}
+   renderAccount();
+ });
+ subscribeRealtime();
+}
+function show(id,nav){
+ ['home','auth','client','business','plans','account'].forEach(x=>document.getElementById(x).classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ document.querySelectorAll('.nav').forEach(n=>n.classList.remove('active'));
+ if(nav)nav.classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function setAuthMode(mode){
+ authMode=mode;
+ document.getElementById('tabLogin').classList.toggle('active',mode==='login');
+ document.getElementById('tabRegister').classList.toggle('active',mode==='register');
+ document.getElementById('registerFields').classList.toggle('hidden',mode!=='register');
+ document.getElementById('authAction').textContent=mode==='login'?'ENTRAR':'CRIAR CONTA';
+ const roleSelect=document.getElementById('authRole');
+ if(mode==='register'){
+   roleSelect.value=pendingRole;
+   roleSelect.disabled=true;
+ }else{
+   roleSelect.disabled=false;
+ }
+}
+async function submitAuth(){
+ if(!db){toast('Configure o Supabase primeiro.');return}
+ const email=document.getElementById('authEmail').value.trim();
+ const password=document.getElementById('authPassword').value;
+ if(!email||password.length<6){toast('Informe e-mail e senha com pelo menos 6 caracteres.');return}
+ if(authMode==='register'){
+   const full_name=document.getElementById('authName').value.trim();
+   const role=document.getElementById('authRole').value;
+   if(!full_name){toast('Informe seu nome.');return}
+   const {data,error}=await db.auth.signUp({email,password,options:{data:{full_name,role}}});
+   if(error){toast(error.message);return}
+   if(data.session){
+     session=data.session;await loadProfile();toast('Conta criada.');
+     routeRole(role);
+   }else{
+     toast('Conta criada. Confira seu e-mail para confirmar o cadastro.');
+     setAuthMode('login');
+   }
+ }else{
+   const {data,error}=await db.auth.signInWithPassword({email,password});
+   if(error){toast('Não foi possível entrar. Confira e-mail e senha.');return}
+   session=data.session;await loadProfile();toast('Login realizado.');
+   routeRole(pendingRole||'client');
+ }
+}
+async function loadProfile(){
+ if(!db||!session)return;
+ let {data,error}=await db.from('profiles').select('*').eq('id',session.user.id).maybeSingle();
+ if(error){toast('Erro ao carregar perfil.');return}
+ profile=data;
+ const r=await db.from('businesses').select('*').eq('owner_id',session.user.id).maybeSingle();
+ business=r.data||null;
+ renderAccount();
+}
+async function routeRole(role,nav){
+ pendingRole=role;
+ if(!configReady()){show('account',nav);toast('Primeiro conecte o Supabase no config.js.');return}
+ if(!session){
+   document.getElementById('authRole').value=role;
+   show('auth',nav);
+   setAuthMode('login');
+   return;
+ }
+ if(!profile)await loadProfile();
+
+ // O papel no banco passa a representar o modo atual.
+ // Isso permite que a mesma conta alterne entre Cliente e Empresa.
+ if(profile?.role!==role){
+   const {data:updatedProfile,error:roleError}=await db
+     .from('profiles')
+     .update({role})
+     .eq('id',session.user.id)
+     .select()
+     .single();
+
+   if(roleError){
+     toast('Não foi possível trocar o modo da conta.');
+     return;
+   }
+   profile=updatedProfile;
+ }
+
+ if(role==='client'){
+   show('client',nav);
+   document.getElementById('clientHello').textContent=profile?.full_name||session?.user?.email||'';
+   await loadMyRequests();
+ }else{
+   show('business',nav);
+   await loadBusinessPanel();
+ }
+}
+function pickCat(el){
+ document.querySelectorAll('.cat').forEach(c=>c.classList.remove('active'));
+ el.classList.add('active');selectedCategory=el.dataset.cat;
+ const ex={Casa:'Minha tomada queimou e parte da casa ficou sem energia.',Veículo:'Meu carro não está pegando e preciso de ajuda.',Comida:'Quero duas pizzas grandes e refrigerante por até R$100.',Tecnologia:'Meu notebook não liga e preciso de orçamento.',Beleza:'Quero um horário ainda hoje.',Outros:''};
+ document.getElementById('need').value=ex[selectedCategory]||'';
+}
+async function createRequest(){
+ if(!db||!session)return;
+ const description=document.getElementById('need').value.trim(), urgency=document.getElementById('urgency').value, neighborhood=document.getElementById('bairro').value.trim();
+ if(!description||!neighborhood){toast('Descreva o pedido e informe o bairro.');return}
+ const {error}=await db.from('requests').insert({client_id:session.user.id,category:selectedCategory,description,urgency,neighborhood});
+ if(error){toast(error.message);return}
+ document.getElementById('need').value='';
+ toast('Pedido publicado para as empresas.');
+ await loadMyRequests();
+}
+async function loadMyRequests(){
+ if(!db||!session)return;
+ const {data,error}=await db.from('requests').select('*').eq('client_id',session.user.id).order('created_at',{ascending:false});
+ if(error){toast('Erro ao carregar seus pedidos.');return}
+ document.getElementById('myCount').textContent=data.length;
+ const box=document.getElementById('myRequests');
+ if(!data.length){box.innerHTML='<div class="empty">Você ainda não publicou nenhum pedido.</div>';return}
+ const html=[];
+ for(const r of data){
+   const {data:offers}=await db.from('offers').select('id,price,eta_minutes,message,status,businesses(name,rating)').eq('request_id',r.id).order('created_at',{ascending:true});
+   html.push(renderClientRequest(r,offers||[]));
+ }
+ box.innerHTML=html.join('');
+}
+function renderClientRequest(r,offers){
+ return `<div class="request ${r.urgency==='Agora'?'urgent':''}">
+  <div class="small muted">${esc(r.category)} • ${formatDate(r.created_at)}</div>
+  <h3>${esc(r.description)}</h3>
+  <div class="meta">📍 ${esc(r.neighborhood)} • ${esc(r.urgency)}</div>
+  <div class="tags"><span class="tag">${offers.length} proposta(s)</span><span class="tag">${statusText(r.status)}</span></div>
+  ${offers.map(o=>`<div class="offer">
+     <div class="offerTop"><b>${esc(o.businesses?.name||'Empresa')}</b><b>R$ ${money(o.price)}</b></div>
+     <div class="small muted" style="margin-top:5px">⭐ ${esc(o.businesses?.rating??'5.0')} • ${o.eta_minutes??'—'} min</div>
+     <div class="small" style="margin-top:7px">${esc(o.message)}</div>
+     ${r.status==='open'?`<button class="btn" style="margin-top:10px" onclick="acceptOffer('${r.id}','${o.id}')">ESCOLHER ESTA EMPRESA</button>`:''}
+   </div>`).join('')}
+ </div>`;
+}
+async function acceptOffer(requestId,offerId){
+ const {error}=await db.rpc('accept_offer',{p_request_id:requestId,p_offer_id:offerId});
+ if(error){toast(error.message);return}
+ toast('Empresa escolhida. Pedido fechado.');
+ await loadMyRequests();
+}
+async function createBusiness(){
+ if(!db||!session)return;
+ const name=document.getElementById('bizName').value.trim(),category=document.getElementById('bizCategory').value.trim()||'Outros',neighborhood=document.getElementById('bizNeighborhood').value.trim(),phone=document.getElementById('bizPhone').value.trim();
+ if(!name){toast('Informe o nome da empresa.');return}
+ const {data,error}=await db.from('businesses').insert({owner_id:session.user.id,name,category,neighborhood,phone}).select().single();
+ if(error){toast(error.message);return}
+ business=data;toast('Perfil da empresa criado.');await loadBusinessPanel();
+}
+async function loadBusinessPanel(){
+ if(!business)await loadProfile();
+ const setup=document.getElementById('businessSetup'),panel=document.getElementById('businessPanel');
+ if(!business){setup.classList.remove('hidden');panel.classList.add('hidden');return}
+ setup.classList.add('hidden');panel.classList.remove('hidden');
+ document.getElementById('bizTitle').textContent=business.name;
+ document.getElementById('availabilitySwitch').classList.toggle('on',!!business.is_available);
+ document.getElementById('availabilityText').textContent=business.is_available?'🟢 Disponível agora':'⚫ Indisponível';
+ await loadCityRequests();
+}
+async function loadCityRequests(){
+ if(!db||!business)return;
+ const {data,error}=await db.from('requests').select('*').eq('status','open').order('created_at',{ascending:false}).limit(50);
+ if(error){toast('Erro ao carregar pedidos.');return}
+ const {data:myOffers}=await db.from('offers').select('request_id').eq('business_id',business.id);
+ const offered=new Set((myOffers||[]).map(o=>o.request_id));
+ document.getElementById('metricRequests').textContent=data.length;
+ document.getElementById('metricResponses').textContent=offered.size;
+ document.getElementById('metricOpen').textContent=data.length;
+ const box=document.getElementById('businessRequests');
+ if(!data.length){box.innerHTML='<div class="empty">Nenhum pedido aberto neste momento.</div>';return}
+ box.innerHTML=data.map(r=>`<div class="request ${r.urgency==='Agora'?'urgent':''}">
+   ${r.urgency==='Agora'?'<div class="small" style="color:#ffaaaa;font-weight:900">🔴 PRECISA AGORA</div>':''}
+   <h3>${esc(r.description)}</h3>
+   <div class="meta">📍 ${esc(r.neighborhood)} • ${esc(r.category)} • ${esc(r.urgency)}</div>
+   <button class="btn ${offered.has(r.id)?'secondary':''}" style="margin-top:12px" onclick="respond('${r.id}')">${offered.has(r.id)?'ATUALIZAR PROPOSTA':'RESPONDER'}</button>
+ </div>`).join('');
+}
+async function respond(requestId){
+ if(!business?.is_available){toast('Ative sua disponibilidade primeiro.');return}
+ const price=prompt('Valor proposto (ex.: 50.00):','50.00');if(price===null)return;
+ const eta=prompt('Tempo estimado em minutos:','20');if(eta===null)return;
+ const message=prompt('Mensagem para o cliente:','Consigo atender. Confirmo o valor final antes do serviço.');if(message===null)return;
+ const payload={request_id:requestId,business_id:business.id,price:Number(String(price).replace(',','.')),eta_minutes:Number(eta),message};
+ if(!Number.isFinite(payload.price)||payload.price<0){toast('Valor inválido.');return}
+ const {error}=await db.from('offers').upsert(payload,{onConflict:'request_id,business_id'});
+ if(error){toast(error.message);return}
+ toast('Proposta enviada.');
+ await loadCityRequests();
+}
+async function toggleAvailability(){
+ if(!db||!business)return;
+ const next=!business.is_available;
+ const {data,error}=await db.from('businesses').update({is_available:next}).eq('id',business.id).select().single();
+ if(error){toast(error.message);return}
+ business=data;await loadBusinessPanel();toast(next?'Empresa disponível.':'Empresa pausada.');
+}
+function subscribeRealtime(){
+ if(!db)return;
+ if(realtimeChannel)db.removeChannel(realtimeChannel);
+ realtimeChannel=db.channel('lucas-agora-live')
+  .on('postgres_changes',{event:'*',schema:'public',table:'requests'},async()=>{
+    if(!document.getElementById('business').classList.contains('hidden'))await loadCityRequests();
+    if(!document.getElementById('client').classList.contains('hidden'))await loadMyRequests();
+  })
+  .on('postgres_changes',{event:'*',schema:'public',table:'offers'},async()=>{
+    if(!document.getElementById('client').classList.contains('hidden'))await loadMyRequests();
+    if(!document.getElementById('business').classList.contains('hidden'))await loadCityRequests();
+  }).subscribe();
+}
+async function logout(){
+ if(db)await db.auth.signOut();
+ session=null;profile=null;business=null;renderAccount();show('home');toast('Você saiu da conta.');
+}
+function showAccount(nav){show('account',nav);renderAccount()}
+function renderAccount(){
+ const info=document.getElementById('accountInfo'),btn=document.getElementById('logoutBtn'),role=document.getElementById('accountRole');
+ if(!session){info.textContent=configReady()?'Você ainda não entrou.':'Supabase ainda não configurado.';btn.classList.add('hidden');role.textContent='';return}
+ info.innerHTML=`<b>${esc(profile?.full_name||session.user.email)}</b><br>${esc(session.user.email)}<br><span class="muted">Você pode usar os modos Cliente e Empresa com esta conta.</span>`;
+ btn.classList.remove('hidden');role.textContent='cliente + empresa';
+}
+function statusText(s){return ({open:'Aberto',chosen:'Empresa escolhida',completed:'Concluído',cancelled:'Cancelado'})[s]||s}
+function formatDate(v){try{return new Date(v).toLocaleString('pt-BR')}catch(e){return ''}}
+function money(v){return Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__t);window.__t=setTimeout(()=>t.classList.remove('show'),2600)}
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+init();
+</script>
+</body>
+</html>
