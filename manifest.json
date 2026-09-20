@@ -3,7 +3,7 @@
   "short_name": "Lucas Agora",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#07111f",
-  "theme_color": "#07111f",
-  "description": "Clientes pedem e empresas respondem em Lucas do Rio Verde."
+  "background_color": "#06161b",
+  "theme_color": "#071a21",
+  "description": "Serviços, empresas e profissionais de Lucas do Rio Verde conectados em um só lugar."
 }

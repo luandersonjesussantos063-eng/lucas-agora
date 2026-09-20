@@ -3,50 +3,749 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#07111f">
-<meta name="description" content="Lucas Agora — clientes pedem, empresas respondem.">
+<meta name="theme-color" content="#071a21">
+<meta name="description" content="Lucas Agora — serviços, empresas e profissionais de Lucas do Rio Verde conectados em um só lugar.">
 <link rel="manifest" href="manifest.json">
 <title>Lucas Agora</title>
+
 <style>
-:root{--bg:#07111f;--card:#0d1b2d;--card2:#13243a;--line:#233b59;--text:#f7fbff;--muted:#9fb1c7;--green:#42d5a2;--blue:#58a6ff;--red:#ff6b6b;--yellow:#ffc857}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0,rgba(88,166,255,.18),transparent 30%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer}.app{width:min(100%,490px);min-height:100vh;margin:auto;padding-bottom:92px}header{position:sticky;top:0;z-index:30;padding:14px 16px;background:rgba(7,17,31,.94);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.06)}.brand{display:flex;justify-content:space-between;align-items:center}.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px}.mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),var(--blue));color:#041018}.badge{border:1px solid var(--line);border-radius:999px;padding:6px 9px;color:#b8c8db;font-size:11px}.badge.ok{color:#b8ffda;border-color:rgba(66,213,162,.35)}.badge.err{color:#ffc1c1;border-color:rgba(255,107,107,.35)}main{padding:16px}.hero,.card,.authBox,.plan{background:linear-gradient(145deg,rgba(66,213,162,.06),rgba(88,166,255,.03)),var(--card);border:1px solid rgba(255,255,255,.07);border-radius:22px;padding:18px;margin-bottom:11px}.hero h1{font-size:29px;line-height:1.05;margin:10px 0 8px}.hero p,.muted{color:var(--muted)}.live{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:#b8ffda;font-weight:900}.dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 9px var(--green)}.roleGrid,.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.roleGrid{margin-top:16px}.role,.cat{color:var(--text);background:var(--card2);border:1px solid var(--line);border-radius:17px;padding:15px;text-align:left}.role{min-height:116px}.role span,.cat span{display:block;font-size:26px;margin-bottom:7px}.role small,.cat small{color:var(--muted)}.cat.active{outline:2px solid var(--green);border-color:transparent}.section{margin-top:20px}.sectionTitle{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.sectionTitle h2{margin:0;font-size:17px}.sectionTitle small{color:var(--muted)}.field{margin-bottom:12px}label{display:block;font-size:12px;color:#cad7e8;margin-bottom:6px}input,textarea,select{width:100%;border:1px solid var(--line);background:#091625;color:var(--text);border-radius:14px;padding:13px 14px;outline:none}textarea{min-height:94px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--blue)}.btn{width:100%;border:0;border-radius:14px;padding:14px 15px;font-weight:900;background:linear-gradient(135deg,var(--green),#34ba8c);color:#04120e}.btn.secondary{background:#152842;color:#dce9f8;border:1px solid var(--line)}.btn.blue{background:linear-gradient(135deg,var(--blue),#3d7cff);color:#fff}.btn.red{background:linear-gradient(135deg,#ff7979,#ff5656);color:white}.btn:disabled{opacity:.55;cursor:not-allowed}.row{display:flex;gap:8px}.row .btn{flex:1}.small{font-size:12px}.hidden{display:none!important}.sep{height:1px;background:var(--line);margin:13px 0}.request{border-left:4px solid var(--blue);background:var(--card);border-radius:18px;padding:14px;margin-bottom:10px;border-top:1px solid rgba(255,255,255,.05);border-right:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}.request.urgent{border-left-color:var(--red)}.request h3{margin:5px 0 7px;font-size:15px}.meta{font-size:12px;color:var(--muted);line-height:1.55}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.tag{font-size:11px;background:#13263f;border:1px solid #25415f;color:#cbd9e8;border-radius:999px;padding:5px 8px}.offer{background:#0a1728;border:1px solid var(--line);border-radius:16px;padding:13px;margin-top:9px}.offerTop{display:flex;justify-content:space-between;gap:12px}.offerTop b:last-child{color:var(--green)}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metric{background:#0a1727;border:1px solid var(--line);border-radius:15px;padding:11px}.metric b{display:block;font-size:18px}.metric small{color:var(--muted)}.bottom{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,490px);z-index:40;background:rgba(7,17,31,.97);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px 8px calc(8px + env(safe-area-inset-bottom))}.nav{background:transparent;border:0;color:#8fa4bb;border-radius:12px;padding:8px 4px;font-size:11px}.nav span{display:block;font-size:18px;margin-bottom:2px}.nav.active{background:#13243a;color:white}.toast{position:fixed;bottom:97px;left:50%;transform:translateX(-50%) translateY(18px);width:min(90%,430px);background:#effff8;color:#063727;border-radius:14px;padding:12px 14px;font-weight:800;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:60}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.toast.error{background:#fff0f0;color:#6b1010}.topback{border:0;background:transparent;color:#b9c7d8;padding:0;margin-bottom:12px}.empty{text-align:center;padding:27px 14px;color:var(--muted)}.statusLine{display:flex;justify-content:space-between;align-items:center;gap:12px}.switch{width:56px;height:30px;border-radius:999px;border:0;background:#2a3c53;position:relative;padding:3px}.switch:after{content:"";position:absolute;width:24px;height:24px;left:3px;top:3px;background:white;border-radius:50%;transition:.2s}.switch.on{background:var(--green)}.switch.on:after{left:29px}.authTabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px}.authTab{border:1px solid var(--line);background:#12243a;color:#aebed1;border-radius:12px;padding:11px}.authTab.active{background:#1b3452;color:white;border-color:var(--blue)}.notice{border:1px dashed #315271;background:#0b192b;border-radius:16px;padding:12px;color:#cad8e9;font-size:12px;line-height:1.5}.price{font-size:25px;font-weight:900;margin:8px 0}.plan{position:relative}.plan.best{border-color:var(--green)}.ribbon{position:absolute;right:12px;top:12px;background:var(--green);color:#04120e;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900}.plan ul{padding-left:18px;color:#cbd7e7;font-size:13px;line-height:1.7}
-.contactBox{margin-top:12px;background:#091625;border:1px solid var(--line);border-radius:16px;padding:13px}
-.contactBox b{display:block;margin-bottom:6px}
-.contactLine{font-size:13px;line-height:1.55;color:#dbe7f4;word-break:break-word}
+:root{
+  --bg:#06161b;
+  --bg2:#082229;
+  --surface:#0d252c;
+  --surface2:#12313a;
+  --surface3:#173d46;
+  --line:#28505a;
+  --text:#f7fbf8;
+  --muted:#9db9b7;
+  --green:#50d39a;
+  --green2:#2fb879;
+  --blue:#67b7d6;
+  --gold:#e8c96a;
+  --orange:#f2a85f;
+  --red:#ff7474;
+  --shadow:0 18px 50px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 8% -8%,rgba(80,211,154,.18),transparent 30%),
+    radial-gradient(circle at 100% 15%,rgba(103,183,214,.12),transparent 28%),
+    linear-gradient(180deg,#06161b 0%,#071c22 42%,#06161b 100%);
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.16;
+  background:
+    repeating-linear-gradient(160deg,transparent 0 44px,rgba(255,255,255,.025) 45px 46px),
+    repeating-linear-gradient(20deg,transparent 0 80px,rgba(80,211,154,.025) 81px 82px);
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.app{
+  position:relative;
+  width:min(100%,500px);
+  min-height:100vh;
+  margin:auto;
+  padding-bottom:100px;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:30;
+  padding:12px 16px;
+  background:rgba(6,22,27,.9);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.brand{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:11px;min-width:0}
+.logoText{display:flex;flex-direction:column;line-height:1.12;min-width:0}
+.logoText strong{font-size:18px;letter-spacing:-.2px;white-space:nowrap}
+.logoText small{font-size:10px;color:#89aaa7;margin-top:4px;letter-spacing:.15px}
+.mark{
+  position:relative;
+  flex:0 0 42px;
+  width:42px;height:42px;
+  border-radius:14px;
+  display:grid;place-items:center;
+  color:#042016;
+  font-weight:950;
+  background:linear-gradient(145deg,#72e3b0 0%,#4dcc98 52%,#7cc7df 100%);
+  box-shadow:0 8px 24px rgba(80,211,154,.18);
+  overflow:hidden;
+}
+.mark:after{
+  content:"";
+  position:absolute;
+  width:48px;height:14px;
+  left:-3px;bottom:-6px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.48);
+  transform:rotate(-9deg);
+}
+.badge{
+  flex:0 0 auto;
+  border:1px solid rgba(80,211,154,.28);
+  background:rgba(80,211,154,.07);
+  border-radius:999px;
+  padding:7px 9px;
+  color:#bdf8d8;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.4px;
+}
+.badge.err{color:#ffd0d0;border-color:rgba(255,116,116,.35);background:rgba(255,116,116,.08)}
+main{padding:16px}
+
+.hero,.card,.authBox,.plan{
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:22px 18px 18px;
+  background:
+    radial-gradient(circle at 100% 0,rgba(232,201,106,.12),transparent 34%),
+    linear-gradient(145deg,rgba(80,211,154,.11),rgba(103,183,214,.06)),
+    var(--surface);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  left:-14%;right:-14%;bottom:-53px;height:105px;
+  border:2px solid rgba(103,183,214,.18);
+  border-radius:50%;
+  transform:rotate(-5deg);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  left:-20%;right:-20%;bottom:-68px;height:113px;
+  border:2px solid rgba(80,211,154,.14);
+  border-radius:50%;
+  transform:rotate(4deg);
+}
+.hero>*{position:relative;z-index:1}
+.cityEyebrow{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:#b9efd4;
+  font-weight:850;
+  font-size:10px;
+  letter-spacing:.85px;
+  text-transform:uppercase;
+}
+.cityEyebrow .pin{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 0 4px rgba(232,201,106,.1);
+}
+.hero h1{
+  margin:13px 0 9px;
+  font-size:31px;
+  line-height:1.03;
+  letter-spacing:-1.05px;
+}
+.hero p{margin:0;color:#abc0c0;font-size:14px;line-height:1.55}
+.localLine{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:15px;
+}
+.localChip{
+  padding:6px 9px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+  color:#cce0de;
+  font-size:10px;
+  font-weight:750;
+}
+.roleGrid,.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.roleGrid{margin-top:17px}
+.role,.cat{
+  position:relative;
+  color:var(--text);
+  text-align:left;
+  border:1px solid var(--line);
+  transition:transform .15s ease,border-color .15s ease,background .15s ease;
+}
+.role:active,.cat:active{transform:scale(.985)}
+.role{
+  min-height:128px;
+  border-radius:19px;
+  padding:15px;
+  background:linear-gradient(160deg,#173740,#102a32);
+}
+.role:before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;height:3px;
+  border-radius:19px 19px 0 0;
+  background:linear-gradient(90deg,var(--green),var(--blue));
+  opacity:.85;
+}
+.role span,.cat span{display:block;font-size:25px;margin-bottom:8px}
+.role b{font-size:15px}
+.role small,.cat small{color:var(--muted);line-height:1.35}
+.roleHint{display:block;margin-top:7px;color:#74dbad!important;font-size:10px!important;font-weight:800}
+.section{margin-top:18px}
+.sectionTitle{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:10px;
+  margin:0 2px 10px;
+}
+.sectionTitle h2{margin:0;font-size:17px;letter-spacing:-.2px}
+.sectionTitle small{color:var(--muted);font-size:11px}
+.sectionEyebrow{
+  font-size:10px;
+  color:#75d7ac;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  margin-bottom:4px;
+}
+.localFeatures{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:9px;
+}
+.featureCard{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px 14px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(145deg,rgba(255,255,255,.028),rgba(80,211,154,.025)),var(--surface);
+}
+.featureIcon{
+  width:38px;height:38px;border-radius:13px;flex:0 0 38px;
+  display:grid;place-items:center;
+  background:#153941;
+  border:1px solid #24515a;
+  font-size:18px;
+}
+.featureCard b{display:block;font-size:13px;margin-bottom:3px}
+.featureCard small{display:block;color:var(--muted);line-height:1.4}
+.citySignature{
+  margin-top:13px;
+  padding:13px 14px;
+  border-radius:18px;
+  border:1px solid rgba(232,201,106,.16);
+  background:linear-gradient(90deg,rgba(232,201,106,.055),rgba(80,211,154,.045));
+}
+.citySignature b{font-size:12px;color:#f3dfa2}
+.citySignature div{margin-top:4px;color:#9fbab8;font-size:11px;line-height:1.5}
+
+.card,.authBox,.plan{
+  background:linear-gradient(145deg,rgba(80,211,154,.035),rgba(103,183,214,.02)),var(--surface);
+  padding:17px;
+  margin-bottom:11px;
+}
+.formCard{position:relative;overflow:hidden}
+.formCard:before{
+  content:"";
+  position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--green),var(--blue));
+}
+.formIntro{
+  margin:-2px 0 15px;
+  padding:11px 12px;
+  border-radius:15px;
+  background:#0a1f25;
+  border:1px solid #1f444d;
+  color:#b7cecc;
+  font-size:12px;
+  line-height:1.5;
+}
+.field{margin-bottom:13px}
+label{
+  display:block;
+  font-size:11px;
+  font-weight:800;
+  color:#c9ddda;
+  margin-bottom:6px;
+  letter-spacing:.15px;
+}
+input,textarea,select{
+  width:100%;
+  border:1px solid #254b54;
+  background:#071b21;
+  color:var(--text);
+  border-radius:15px;
+  padding:13px 14px;
+  outline:none;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus,select:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(80,211,154,.08);
+}
+::placeholder{color:#6f918f}
+.btn{
+  width:100%;
+  border:0;
+  border-radius:15px;
+  padding:14px 15px;
+  font-weight:900;
+  letter-spacing:.1px;
+  background:linear-gradient(135deg,#62dda8,#37c286);
+  color:#032218;
+  box-shadow:0 9px 24px rgba(47,184,121,.14);
+}
+.btn.secondary{
+  background:#14323a;
+  color:#d7e8e5;
+  border:1px solid #2a5660;
+  box-shadow:none;
+}
+.btn.blue{
+  background:linear-gradient(135deg,#72c0dc,#4fa9c9);
+  color:#04212a;
+}
+.btn.red{background:linear-gradient(135deg,#ff8c8c,#ff6f6f);color:#381010}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.row{display:flex;gap:8px}.row .btn{flex:1}
+.small{font-size:12px}.muted{color:var(--muted)}
+.hidden{display:none!important}
+.sep{height:1px;background:var(--line);margin:13px 0}
+
+.cat{
+  min-height:115px;
+  border-radius:19px;
+  padding:14px;
+  background:#102a32;
+}
+.cat.active{
+  outline:none;
+  border-color:#56d7a0;
+  background:linear-gradient(145deg,rgba(80,211,154,.11),rgba(103,183,214,.04)),#112d34;
+  box-shadow:0 0 0 2px rgba(80,211,154,.12);
+}
+.cat.active:after{
+  content:"✓";
+  position:absolute;
+  top:9px;right:10px;
+  width:20px;height:20px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--green);
+  color:#062219;
+  font-size:11px;font-weight:950;
+}
+
+.privacyNotice{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:12px;
+  margin-bottom:13px;
+  border-radius:16px;
+  border:1px solid rgba(80,211,154,.18);
+  background:rgba(80,211,154,.055);
+  color:#c7ddd9;
+  font-size:11px;
+  line-height:1.5;
+}
+.privacyIcon{
+  width:30px;height:30px;border-radius:10px;flex:0 0 30px;
+  display:grid;place-items:center;
+  background:#153a31;
+  color:#9af0c7;
+}
+
+.request{
+  border-left:4px solid var(--blue);
+  background:linear-gradient(145deg,rgba(255,255,255,.018),rgba(103,183,214,.025)),var(--surface);
+  border-radius:19px;
+  padding:15px;
+  margin-bottom:10px;
+  border-top:1px solid rgba(255,255,255,.055);
+  border-right:1px solid rgba(255,255,255,.055);
+  border-bottom:1px solid rgba(255,255,255,.055);
+}
+.request.urgent{border-left-color:var(--orange)}
+.request h3{margin:6px 0 8px;font-size:15px;line-height:1.35}
+.meta{font-size:12px;color:var(--muted);line-height:1.55}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.tag{
+  font-size:10px;
+  background:#12323a;
+  border:1px solid #25515b;
+  color:#c8dcda;
+  border-radius:999px;
+  padding:5px 8px;
+}
+.offer{
+  background:#081e24;
+  border:1px solid #244a54;
+  border-radius:17px;
+  padding:13px;
+  margin-top:10px;
+}
+.offerTop{display:flex;justify-content:space-between;gap:12px}
+.offerTop b:last-child{color:#7ce6b4}
+.contactBox{
+  margin-top:12px;
+  background:#081d22;
+  border:1px solid #28515a;
+  border-radius:17px;
+  padding:13px;
+}
+.contactBox b{display:block;margin-bottom:7px;font-size:15px}
+.contactLine{font-size:12px;line-height:1.7;color:#d6e5e2;word-break:break-word}
 .actionGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.actionGrid .btn{padding:12px 10px}
-.statusChosen{color:#ffd982}
-.statusDone{color:#8ff5c9}
+.actionGrid .btn{padding:12px 8px}
+.statusChosen{color:#f0cf73}
+.statusDone{color:#85e8b8}
+
+.businessHero{
+  background:
+    radial-gradient(circle at 100% 0,rgba(80,211,154,.11),transparent 36%),
+    var(--surface);
+}
+.businessKicker{font-size:10px;text-transform:uppercase;letter-spacing:.65px;color:#75d8ad;font-weight:900}
+.businessHero h2{margin:5px 0 5px;font-size:22px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.metric{
+  min-height:78px;
+  background:#0b2228;
+  border:1px solid #244c55;
+  border-radius:16px;
+  padding:11px;
+}
+.metric b{display:block;font-size:20px;margin-bottom:3px}
+.metric small{color:#8facaa;font-size:10px}
+
+.statusLine{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.switch{width:56px;height:30px;border-radius:999px;border:0;background:#29444a;position:relative;padding:3px}
+.switch:after{content:"";position:absolute;width:24px;height:24px;left:3px;top:3px;background:#eaf7f3;border-radius:50%;transition:.2s}
+.switch.on{background:var(--green2)}
+.switch.on:after{left:29px}
+
+.authTabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px}
+.authTab{
+  border:1px solid #28505a;
+  background:#0e2a31;
+  color:#9fbab8;
+  border-radius:13px;
+  padding:11px;
+}
+.authTab.active{background:#173c45;color:#fff;border-color:#5fcda1}
+.notice{
+  border:1px dashed #315a63;
+  background:#0a2026;
+  border-radius:16px;
+  padding:12px;
+  color:#bfd1cf;
+  font-size:11px;
+  line-height:1.55;
+}
+.price{font-size:25px;font-weight:900;margin:8px 0}
+.plan{position:relative}
+.plan.best{border-color:var(--green)}
+.ribbon{
+  position:absolute;right:12px;top:12px;
+  background:var(--green);color:#042116;
+  border-radius:999px;padding:5px 8px;
+  font-size:9px;font-weight:950;
+}
+.plan ul{padding-left:18px;color:#cbd7d5;font-size:12px;line-height:1.7}
+
+.topback{
+  border:0;
+  background:transparent;
+  color:#9db9b7;
+  padding:2px 0 10px;
+  font-size:12px;
+  font-weight:750;
+}
+.empty{
+  text-align:center;
+  padding:25px 14px;
+  color:#7f9f9d;
+  border:1px dashed #234850;
+  border-radius:17px;
+  background:rgba(255,255,255,.012);
+}
+.toast{
+  position:fixed;
+  bottom:100px;
+  left:50%;
+  transform:translateX(-50%) translateY(18px);
+  width:min(91%,440px);
+  background:#eafff4;
+  color:#063c29;
+  border:1px solid rgba(80,211,154,.35);
+  border-radius:16px;
+  padding:12px 14px;
+  font-weight:850;
+  font-size:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  z-index:60;
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.error{background:#fff0f0;color:#761818;border-color:#ffc1c1}
+
+.bottom{
+  position:fixed;
+  left:50%;bottom:0;
+  transform:translateX(-50%);
+  width:min(100%,500px);
+  z-index:40;
+  background:rgba(5,19,24,.96);
+  backdrop-filter:blur(18px);
+  border-top:1px solid rgba(255,255,255,.07);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+  padding:8px 8px calc(8px + env(safe-area-inset-bottom));
+}
+.nav{
+  min-height:54px;
+  background:transparent;
+  border:0;
+  color:#739390;
+  border-radius:15px;
+  padding:7px 4px 6px;
+  font-size:10px;
+  font-weight:750;
+  transition:.15s ease;
+}
+.nav span{display:block;font-size:18px;margin-bottom:3px;filter:saturate(.75)}
+.nav.active{
+  color:#dff7eb;
+  background:linear-gradient(145deg,rgba(80,211,154,.12),rgba(103,183,214,.07));
+  box-shadow:inset 0 0 0 1px rgba(80,211,154,.12);
+}
+.nav.active span{filter:none}
+
+@media (min-width:700px){
+  body{padding:18px 0}
+  .app{
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 30px 100px rgba(0,0,0,.28);
+    border:1px solid rgba(255,255,255,.06);
+  }
+  header{border-radius:28px 28px 0 0}
+}
 </style>
+
 </head>
 <body>
 <div class="app">
-<header><div class="brand"><div class="logo"><div class="mark">LA</div>Lucas Agora</div><div class="badge ok" id="headerBadge">ONLINE V5</div></div></header>
+<header>
+  <div class="brand">
+    <div class="logo">
+      <div class="mark">LA</div>
+      <div class="logoText">
+        <strong>Lucas Agora</strong>
+        <small>Lucas do Rio Verde • MT</small>
+      </div>
+    </div>
+    <div class="badge ok" id="headerBadge">V6 • BETA</div>
+  </div>
+</header>
 <main>
 <section id="home">
- <div class="hero"><div class="live"><span class="dot"></span> CONECTANDO A CIDADE</div><h1>O que você precisa agora?</h1><p>O cliente publica. Empresas disponíveis respondem. O cliente escolhe.</p><div class="roleGrid"><button class="role" data-mode="client"><span>🙋‍♂️</span><b>Sou cliente</b><br><small>Quero pedir algo.</small></button><button class="role" data-mode="business"><span>🏪</span><b>Sou empresa</b><br><small>Quero receber clientes.</small></button></div></div>
- <div class="section"><div class="card"><b>⚡ Preciso Agora</b><div class="small muted">Publique o que precisa em poucos segundos.</div></div><div class="card"><b>💬 Empresas fazem propostas</b><div class="small muted">Preço, prazo e mensagem ficam reunidos no pedido.</div></div><div class="card"><b>⭐ Você escolhe</b><div class="small muted">O cliente decide com quem quer fechar.</div></div></div>
+  <div class="hero">
+    <div class="cityEyebrow"><span class="pin"></span> FEITO PARA LUCAS DO RIO VERDE</div>
+    <h1>O que você precisa em Lucas agora?</h1>
+    <p>Publique seu pedido e receba propostas de empresas e profissionais da cidade. Você compara e escolhe quem vai te atender.</p>
+
+    <div class="localLine">
+      <span class="localChip">📍 Lucas do Rio Verde • MT</span>
+      <span class="localChip">⚡ Pedidos locais</span>
+      <span class="localChip">🤝 Negócios da cidade</span>
+    </div>
+
+    <div class="roleGrid">
+      <button class="role" data-mode="client">
+        <span>🙋‍♂️</span>
+        <b>Preciso de um serviço</b><br>
+        <small>Publique o que precisa e receba propostas.</small>
+        <small class="roleHint">ENTRAR COMO CLIENTE →</small>
+      </button>
+      <button class="role" data-mode="business">
+        <span>🏪</span>
+        <b>Tenho uma empresa</b><br>
+        <small>Receba pedidos e conquiste clientes locais.</small>
+        <small class="roleHint">ABRIR PAINEL →</small>
+      </button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sectionTitle">
+      <div><div class="sectionEyebrow">Lucas conectado</div><h2>Um app pensado pra cidade</h2></div>
+      <small>local de verdade</small>
+    </div>
+
+    <div class="localFeatures">
+      <div class="featureCard">
+        <div class="featureIcon">📍</div>
+        <div><b>Pedido perto de você</b><small>Bairro, urgência e necessidade aparecem direto para empresas da cidade.</small></div>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">💬</div>
+        <div><b>Propostas no mesmo lugar</b><small>Preço, prazo e mensagem organizados para você comparar sem correria.</small></div>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">🔒</div>
+        <div><b>Seu endereço fica protegido</b><small>Telefone e endereço só aparecem para a empresa que você escolher.</small></div>
+      </div>
+    </div>
+
+    <div class="citySignature">
+      <b>🌱 Tecnologia local, com a energia de Lucas</b>
+      <div>Uma plataforma para aproximar moradores, profissionais e empresas de Lucas do Rio Verde — do Centro aos bairros, sem complicação.</div>
+    </div>
+  </div>
 </section>
 <section id="auth" class="hidden">
- <button class="topback" data-go="home">← Voltar</button><div class="authBox"><div class="authTabs"><button id="tabLogin" class="authTab active" data-auth-mode="login">Entrar</button><button id="tabRegister" class="authTab" data-auth-mode="register">Criar conta</button></div><div id="registerFields" class="hidden"><div class="field"><label>Seu nome / nome responsável</label><input id="authName" placeholder="Seu nome"></div><div class="field"><label>Começar no modo</label><select id="authRole" disabled><option value="client">Cliente</option><option value="business">Empresa / profissional</option></select></div></div><div class="field"><label>E-mail</label><input id="authEmail" type="email" autocomplete="email" placeholder="voce@email.com"></div><div class="field"><label>Senha</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="mínimo 6 caracteres"></div><button id="authAction" class="btn">ENTRAR</button><div class="notice" style="margin-top:12px">A mesma conta pode usar o modo Cliente e também criar um perfil de Empresa.</div></div>
+ <button class="topback" data-go="home">← Voltar</button><div class="authBox"><div class="authTabs"><button id="tabLogin" class="authTab active" data-auth-mode="login">Entrar</button><button id="tabRegister" class="authTab" data-auth-mode="register">Criar conta</button></div><div id="registerFields" class="hidden"><div class="field"><label>Seu nome / nome responsável</label><input id="authName" placeholder="Seu nome"></div><div class="field"><label>Começar no modo</label><select id="authRole" disabled><option value="client">Cliente</option><option value="business">Empresa / profissional</option></select></div></div><div class="field"><label>E-mail</label><input id="authEmail" type="email" autocomplete="email" placeholder="voce@email.com"></div><div class="field"><label>Senha</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="mínimo 6 caracteres"></div><button id="authAction" class="btn">ENTRAR</button><div class="notice" style="margin-top:12px">Uma conta só, dois lados da cidade: você pode pedir serviços e também cadastrar sua empresa quando quiser.</div></div>
 </section>
 <section id="client" class="hidden">
- <button class="topback" data-go="home">← Início</button><div class="sectionTitle"><h2>Novo pedido</h2><small id="clientHello"></small></div><div class="grid2"><button class="cat active" data-cat="Casa"><span>🏠</span><b>Casa</b><br><small>Elétrica, hidráulica...</small></button><button class="cat" data-cat="Veículo"><span>🚗</span><b>Veículo</b><br><small>Mecânico, guincho...</small></button><button class="cat" data-cat="Comida"><span>🍕</span><b>Comida</b><br><small>Entrega e ofertas</small></button><button class="cat" data-cat="Tecnologia"><span>💻</span><b>Tecnologia</b><br><small>PC, celular, sites...</small></button><button class="cat" data-cat="Beleza"><span>💈</span><b>Beleza</b><br><small>Barbearia, salão...</small></button><button class="cat" data-cat="Outros"><span>➕</span><b>Outros</b><br><small>Qualquer necessidade</small></button></div><div class="card" style="margin-top:12px"><div class="field"><label>O que você precisa?</label><textarea id="need" placeholder="Descreva o que precisa."></textarea></div><div class="field"><label>Quando?</label><select id="urgency"><option>Agora</option><option>Hoje</option><option>Esta semana</option><option>Só orçamento</option></select></div><div class="field"><label>Bairro</label><input id="bairro" placeholder="Ex.: Parque das Emas"></div>
-<div class="field"><label>Telefone / WhatsApp</label><input id="clientPhone" inputmode="tel" placeholder="Ex.: (65) 99999-9999"></div>
-<div class="field"><label>Endereço completo</label><input id="clientAddress" placeholder="Ex.: Rua das Flores, 123"></div>
-<div class="field"><label>Ponto de referência (opcional)</label><input id="clientReference" placeholder="Ex.: Casa azul, perto do mercado"></div>
-<div class="notice" style="margin-bottom:12px">Seu telefone e endereço ficam ocultos enquanto o pedido está aberto. Só a empresa escolhida poderá ver esses dados.</div>
-<button class="btn" id="publishBtn">PUBLICAR PEDIDO</button></div><div class="section"><div class="sectionTitle"><h2>Meus pedidos</h2><small id="myCount">0</small></div><div id="myRequests"></div></div>
+  <button class="topback" data-go="home">← Voltar para o início</button>
+
+  <div class="sectionTitle">
+    <div><div class="sectionEyebrow">Pedido local</div><h2>Do que você precisa?</h2></div>
+    <small id="clientHello"></small>
+  </div>
+
+  <div class="grid2">
+    <button class="cat active" data-cat="Casa"><span>🏠</span><b>Casa</b><br><small>Elétrica, hidráulica...</small></button>
+    <button class="cat" data-cat="Veículo"><span>🚗</span><b>Veículo</b><br><small>Mecânico, guincho...</small></button>
+    <button class="cat" data-cat="Comida"><span>🍕</span><b>Comida</b><br><small>Entrega e ofertas</small></button>
+    <button class="cat" data-cat="Tecnologia"><span>💻</span><b>Tecnologia</b><br><small>PC, celular, sites...</small></button>
+    <button class="cat" data-cat="Beleza"><span>💈</span><b>Beleza</b><br><small>Barbearia, salão...</small></button>
+    <button class="cat" data-cat="Outros"><span>➕</span><b>Outros</b><br><small>Qualquer necessidade</small></button>
+  </div>
+
+  <div class="card formCard" style="margin-top:12px">
+    <div class="formIntro">📍 O pedido será publicado para empresas e profissionais de Lucas do Rio Verde. Quanto mais claro você for, melhores tendem a ser as propostas.</div>
+
+    <div class="field">
+      <label>O que você precisa?</label>
+      <textarea id="need" placeholder="Conte rapidamente o que aconteceu ou o que você procura."></textarea>
+    </div>
+
+    <div class="field">
+      <label>Quando precisa?</label>
+      <select id="urgency"><option>Agora</option><option>Hoje</option><option>Esta semana</option><option>Só orçamento</option></select>
+    </div>
+
+    <div class="field">
+      <label>Bairro em Lucas do Rio Verde</label>
+      <input id="bairro" placeholder="Ex.: Parque das Emas">
+    </div>
+
+    <div class="field">
+      <label>Telefone / WhatsApp</label>
+      <input id="clientPhone" inputmode="tel" placeholder="Ex.: (65) 99999-9999">
+    </div>
+
+    <div class="field">
+      <label>Endereço completo</label>
+      <input id="clientAddress" placeholder="Rua, número e complemento">
+    </div>
+
+    <div class="field">
+      <label>Ponto de referência <span class="muted">(opcional)</span></label>
+      <input id="clientReference" placeholder="Ex.: casa de esquina, perto do mercado">
+    </div>
+
+    <div class="privacyNotice">
+      <div class="privacyIcon">🔒</div>
+      <div><b>Seu endereço não fica público.</b><br>Enquanto o pedido estiver aberto, as empresas veem apenas o bairro. Telefone e endereço completo só são liberados para a empresa que você escolher.</div>
+    </div>
+
+    <button class="btn" id="publishBtn">PUBLICAR PEDIDO EM LUCAS</button>
+  </div>
+
+  <div class="section">
+    <div class="sectionTitle">
+      <div><div class="sectionEyebrow">Acompanhe por aqui</div><h2>Meus pedidos</h2></div>
+      <small id="myCount">0</small>
+    </div>
+    <div id="myRequests"></div>
+  </div>
 </section>
 <section id="business" class="hidden">
- <button class="topback" data-go="home">← Início</button><div id="businessSetup" class="hidden"><div class="sectionTitle"><h2>Complete sua empresa</h2><small>primeiro acesso</small></div><div class="card"><div class="field"><label>Nome da empresa / profissional</label><input id="bizName" placeholder="Ex.: Carlos Elétrica"></div><div class="field"><label>Categoria</label><input id="bizCategory" placeholder="Ex.: Eletricista"></div><div class="field"><label>Bairro</label><input id="bizNeighborhood" placeholder="Ex.: Centro"></div><div class="field"><label>WhatsApp</label><input id="bizPhone" placeholder="(65) 99999-9999"></div><button class="btn" id="createBusinessBtn">CRIAR PERFIL DA EMPRESA</button></div></div><div id="businessPanel" class="hidden"><div class="card"><div class="statusLine"><div><div class="small muted">Empresa</div><h2 id="bizTitle" style="margin:4px 0 6px">—</h2><div class="small" id="availabilityText">🟢 Disponível agora</div></div><button id="availabilitySwitch" class="switch on" aria-label="Alternar disponibilidade"></button></div></div><div class="metrics"><div class="metric"><b id="metricRequests">0</b><small>Pedidos</small></div><div class="metric"><b id="metricResponses">0</b><small>Respondidos</small></div><div class="metric"><b id="metricOpen">0</b><small>Abertos</small></div></div><div class="section"><div class="sectionTitle"><h2>Pedidos da cidade</h2><small>atualiza automático</small></div><div id="businessRequests"></div></div>
-<div class="section"><div class="sectionTitle"><h2>Atendimentos em andamento</h2><small id="activeCount">0</small></div><div id="activeJobs"></div></div>
-</div>
+  <button class="topback" data-go="home">← Voltar para o início</button>
+
+  <div id="businessSetup" class="hidden">
+    <div class="sectionTitle">
+      <div><div class="sectionEyebrow">Negócio local</div><h2>Cadastre sua empresa</h2></div>
+      <small>Lucas do Rio Verde</small>
+    </div>
+
+    <div class="card formCard">
+      <div class="formIntro">🏪 Crie seu perfil comercial para começar a receber pedidos de moradores da cidade.</div>
+      <div class="field"><label>Nome da empresa / profissional</label><input id="bizName" placeholder="Ex.: Carlos Elétrica"></div>
+      <div class="field"><label>Categoria</label><input id="bizCategory" placeholder="Ex.: Eletricista"></div>
+      <div class="field"><label>Bairro</label><input id="bizNeighborhood" placeholder="Ex.: Centro"></div>
+      <div class="field"><label>WhatsApp comercial</label><input id="bizPhone" placeholder="(65) 99999-9999"></div>
+      <button class="btn" id="createBusinessBtn">CRIAR PERFIL COMERCIAL</button>
+    </div>
+  </div>
+
+  <div id="businessPanel" class="hidden">
+    <div class="card businessHero">
+      <div class="statusLine">
+        <div>
+          <div class="businessKicker">Painel da empresa • Lucas do Rio Verde</div>
+          <h2 id="bizTitle">—</h2>
+          <div class="small" id="availabilityText">🟢 Disponível para novos pedidos</div>
+        </div>
+        <button id="availabilitySwitch" class="switch on" aria-label="Alternar disponibilidade"></button>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><b id="metricRequests">0</b><small>Pedidos locais</small></div>
+      <div class="metric"><b id="metricResponses">0</b><small>Respondidos</small></div>
+      <div class="metric"><b id="metricOpen">0</b><small>Disponíveis</small></div>
+    </div>
+
+    <div class="section">
+      <div class="sectionTitle">
+        <div><div class="sectionEyebrow">Oportunidades locais</div><h2>Pedidos da cidade</h2></div>
+        <small>atualiza automático</small>
+      </div>
+      <div id="businessRequests"></div>
+    </div>
+
+    <div class="section">
+      <div class="sectionTitle">
+        <div><div class="sectionEyebrow">Serviços confirmados</div><h2>Atendimentos em andamento</h2></div>
+        <small id="activeCount">0</small>
+      </div>
+      <div id="activeJobs"></div>
+    </div>
+  </div>
 </section>
 <section id="plans" class="hidden"><button class="topback" data-go="business">← Voltar</button><div class="sectionTitle"><h2>Planos</h2><small>MVP</small></div><div class="plan"><h3>Grátis</h3><div class="price">R$ 0</div><ul><li>Perfil básico</li><li>Até 5 respostas/mês futuramente</li><li>Pedidos próximos</li></ul></div><div class="plan best"><div class="ribbon">PRO</div><h3>Pro</h3><div class="price">R$ 49,90 <span class="small muted">/mês</span></div><ul><li>Respostas ilimitadas</li><li>Perfil completo</li><li>Mais destaque</li><li>Catálogo e promoções</li></ul></div></section>
-<section id="account" class="hidden"><button class="topback" data-go="home">← Voltar</button><div class="sectionTitle"><h2>Conta</h2><small id="accountRole"></small></div><div class="card"><div id="accountInfo" class="small muted">Nenhuma conta conectada.</div><button id="logoutBtn" class="btn red hidden" style="margin-top:14px">SAIR DA CONTA</button></div><div class="notice" id="diagnostic">Interface carregada. Testando conexão com o banco quando necessário.</div></section>
+<section id="account" class="hidden"><button class="topback" data-go="home">← Voltar</button><div class="sectionTitle"><h2>Conta</h2><small id="accountRole"></small></div><div class="card"><div id="accountInfo" class="small muted">Nenhuma conta conectada.</div><button id="logoutBtn" class="btn red hidden" style="margin-top:14px">SAIR DA CONTA</button></div><div class="notice" id="diagnostic">Lucas Agora • plataforma local para conectar moradores e negócios de Lucas do Rio Verde.</div></section>
 </main>
-<nav class="bottom"><button class="nav active" data-nav="home"><span>🏠</span>Início</button><button class="nav" data-nav="client"><span>🔎</span>Pedir</button><button class="nav" data-nav="business"><span>🏪</span>Empresa</button><button class="nav" data-nav="account"><span>👤</span>Conta</button></nav>
+<nav class="bottom"><button class="nav active" data-nav="home"><span>⌂</span>Início</button><button class="nav" data-nav="client"><span>⌕</span>Pedir</button><button class="nav" data-nav="business"><span>▣</span>Empresa</button><button class="nav" data-nav="account"><span>●</span>Conta</button></nav>
 <div id="toast" class="toast"></div>
 </div>
 <script>
@@ -70,7 +769,7 @@ async function rawFetch(path,{method='GET',body=null,headers={},auth=true,retry=
  const txt=await res.text();let data=null;try{data=txt?JSON.parse(txt):null}catch{data=txt}
  if(res.status===401&&auth&&retry&&session?.refresh_token){const ok=await refreshSession();if(ok)return rawFetch(path,{method,body,headers,auth,retry:false})}
  if(!res.ok)throw new Error(errorMessage(data,res.status));
- setBadge('ONLINE V5','ok');return data
+ setBadge('V6 • BETA','ok');return data
 }
 async function refreshSession(){if(!session?.refresh_token)return false;try{const data=await rawFetch('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:session.refresh_token},auth:false,retry:false});adoptSession(data);return true}catch{logout(false);return false}}
 function adoptSession(data){if(!data?.access_token)return false;saveSession({access_token:data.access_token,refresh_token:data.refresh_token,expires_in:data.expires_in||3600,expires_at:Date.now()+(data.expires_in||3600)*1000,user:data.user||session?.user||null});user=data.user||session?.user||user;return true}
@@ -102,10 +801,10 @@ function renderAccount(){const info=$('accountInfo'),btn=$('logoutBtn'),role=$('
 function logout(showMsg=true){saveSession(null);session=null;user=null;profile=null;business=null;renderAccount();show('home');if(showMsg)toast('Você saiu da conta.')}
 function statusText(s){return ({open:'Aberto',chosen:'Em atendimento',completed:'Concluído',cancelled:'Cancelado'})[s]||s}function formatDate(v){try{return new Date(v).toLocaleString('pt-BR')}catch{return ''}}function money(v){return Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function bindUI(){document.querySelectorAll('.role').forEach(b=>b.addEventListener('click',()=>routeMode(b.dataset.mode)));document.querySelectorAll('[data-auth-mode]').forEach(b=>b.addEventListener('click',()=>setAuthMode(b.dataset.authMode)));document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));document.querySelectorAll('.cat').forEach(b=>b.addEventListener('click',()=>pickCategory(b)));document.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()=>{const n=b.dataset.nav;if(n==='home')show('home',b);else if(n==='account'){show('account',b);renderAccount()}else routeMode(n,b)}));$('authAction').addEventListener('click',submitAuth);$('publishBtn').addEventListener('click',createRequest);$('createBusinessBtn').addEventListener('click',createBusiness);$('availabilitySwitch').addEventListener('click',toggleAvailability);$('logoutBtn').addEventListener('click',()=>logout(true));document.addEventListener('click',e=>{const a=e.target.closest('.acceptOfferBtn');if(a)acceptOffer(a.dataset.request,a.dataset.offer);const r=e.target.closest('.respondBtn');if(r)respondToRequest(r.dataset.request);const c=e.target.closest('.completeJobBtn');if(c)completeJob(c.dataset.request);const w=e.target.closest('.whatsappBtn');if(w)openWhatsApp(w.dataset.phone);const m=e.target.closest('.mapBtn');if(m)openMap(m.dataset.map)})}
-async function boot(){bindUI();session=loadStoredSession();if(session){user=session.user||null;await ensureUser().catch(()=>{});await loadProfile().catch(()=>{})}renderAccount();setBadge('ONLINE V5','ok');$('diagnostic').textContent='Interface V5 carregada. Pedidos agora incluem contato privado e atendimentos em andamento.'}
+async function boot(){bindUI();session=loadStoredSession();if(session){user=session.user||null;await ensureUser().catch(()=>{});await loadProfile().catch(()=>{})}renderAccount();setBadge('V6 • BETA','ok');$('diagnostic').textContent='V6 visual carregada. Lucas Agora conecta moradores, profissionais e empresas de Lucas do Rio Verde.'}
 setInterval(async()=>{if(pollBusy||!session)return;pollBusy=true;try{if(!$('client').classList.contains('hidden'))await loadMyRequests();if(!$('business').classList.contains('hidden')&&business)await Promise.all([loadCityRequests(),loadActiveJobs()])}finally{pollBusy=false}},5000);
 window.addEventListener('DOMContentLoaded',boot);
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=5').catch(()=>{}));
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=6').catch(()=>{}));
 </script>
 </body>
 </html>
