@@ -709,6 +709,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .safetyActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}.safetyActions button{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--muted);padding:10px;font:inherit;font-size:12px}
 .logoText strong{font-size:17px}.mark{object-fit:cover;border-radius:12px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Anuncia Lucas: city-first layout inspired by the owner's reference. */
+.app{width:min(100%,1060px)}main{padding:18px 24px 24px}header{padding:18px 28px;padding-top:max(18px,env(safe-area-inset-top))}.logoText strong{font-size:25px}.logoText small{font-size:13px}.mark{width:52px;height:52px}.badge{font-size:12px}
+.hero{position:relative;isolation:isolate;overflow:hidden;border:1px solid #157c70;border-radius:25px;padding:30px;background:#062b2d;box-shadow:0 14px 45px #0003}.heroCity{position:absolute;inset:0 0 0 47%;z-index:-2;opacity:.85}.heroCity svg{height:100%;width:100%;object-fit:cover}.heroCity span{position:absolute;right:24px;top:24px;color:#e1f8ee;font-size:21px;font-style:italic;line-height:1.3;transform:rotate(-7deg)}.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#032c2cf5 0%,#032c2cee 37%,#032c2c85 64%,#032c2c10 100%)}.hero h1{font-size:clamp(28px,4.6vw,46px);line-height:1.13;max-width:660px;letter-spacing:-1.3px;margin:15px 0}.hero p{max-width:610px;font-size:18px;line-height:1.6}.cityEyebrow{font-size:14px;letter-spacing:1.1px}.localLine{margin-top:20px}.localChip{font-size:13px;background:#062c30a8;border-color:#247070;padding:9px 13px}
+#home>.roleGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0 24px}.role{position:relative;text-align:left;border:1px solid #126d65;border-radius:24px;background:linear-gradient(120deg,#08343a,#031f26);padding:25px 25px 22px 92px;min-height:173px}.role>span{position:absolute;left:24px;top:26px;font-size:42px}.role b{font-size:21px}.role small{font-size:16px;line-height:1.55;display:block;margin-top:7px}.roleHint{font-size:14px!important;color:#65e6b5!important;margin-top:14px!important}.role:hover,.partnerCard:hover{border-color:#62e3b4;transform:translateY(-2px)}
+.partners{margin:26px 0 30px}.partnersHeading{display:flex;gap:14px;align-items:center;margin-bottom:15px}.partnersHeading>span{font-size:32px}.partnersHeading h2{font-size:23px;margin:0;text-transform:uppercase;letter-spacing:-.5px}.partnersHeading p{font-size:15px;color:#a6c6c4;margin:5px 0 0}.partnerCard{display:block;max-width:350px;text-decoration:none;padding:24px;border-radius:22px;border:1px solid #3989c0;background:radial-gradient(ellipse at 0 0,#113d6b,#031c2e 80%);transition:transform .15s,border-color .15s}.partnerIdentity{display:flex;align-items:center;gap:14px}.partnerMark{display:flex;position:relative;align-items:center;justify-content:center;width:54px;height:54px;flex-shrink:0;border:2px solid #6daef9;border-radius:15px;color:#fff;font-size:34px;font-weight:900}.partnerMark span{position:absolute;color:#53e1b5;bottom:-9px;right:-5px;font-size:22px}.partnerIdentity strong{font-size:24px;color:white;letter-spacing:.5px}.partnerIdentity small{display:block;letter-spacing:3px;color:#9dc7ef;font-size:10px;margin-top:4px}.partnerCard p{color:#c7dfed;line-height:1.55;font-size:16px;margin:20px 0}.partnerAction{display:flex;justify-content:space-between;align-items:center;color:#8aece1;border:1px solid #278899;border-radius:999px;padding:12px 16px;font-weight:800;font-size:13px;background:#073448}
+.sectionTitle h2{font-size:24px}.sectionEyebrow{font-size:13px}.sectionTitle small{font-size:13px}.localFeatures{gap:13px}.featureCard{border:1px solid #1e5359;border-radius:22px;padding:17px 23px;gap:21px;background:linear-gradient(105deg,#0b353b,#05262e)}.featureIcon{font-size:27px;width:60px;height:60px;border-radius:18px;background:#07343b;border:1px solid #1b555b}.featureCard b{font-size:19px}.featureCard small{font-size:15px;line-height:1.55;margin-top:5px}.homeRentalsPromo h3{font-size:19px}.homeRentalsPromo p{font-size:14px}.homeRentalsPromo .btn{font-size:13px}.citySignature{font-size:13px;line-height:1.6}
+.bottom{width:min(100%,1060px);max-width:1060px;border-top:1px solid #18504f;background:#031b20f5;gap:6px;padding:10px 20px max(12px,env(safe-area-inset-bottom));backdrop-filter:blur(18px)}.nav{min-height:61px;font-size:13px;border:1px solid transparent;border-radius:17px}.nav span{font-size:25px}.nav.active{border-color:#167768;background:#07352e;color:#83efc9}.legalLinks{margin-bottom:30px}.formCard,.authBox{max-width:650px;margin-left:auto;margin-right:auto}
+@media(max-width:600px){main{padding:12px 13px 20px}header{padding:13px 16px;padding-top:max(13px,env(safe-area-inset-top))}.logoText strong{font-size:20px}.logoText small{font-size:11px}.mark{width:43px;height:43px}.badge{font-size:10px}.hero{padding:22px 18px;border-radius:22px}.hero h1{font-size:31px;letter-spacing:-.9px;max-width:310px}.hero p{font-size:14px;max-width:310px}.heroCity{left:24%;opacity:.52}.heroCity span{display:none}.hero:after{background:linear-gradient(90deg,#032c2cf5,#032c2c99 72%,#032c2c66)}.cityEyebrow{font-size:10px}.localLine{gap:7px}.localChip{font-size:10px;padding:7px 9px}#home>.roleGrid{gap:10px;margin:13px 0 23px}.role{padding:17px 13px;min-height:207px;border-radius:20px}.role>span{position:static;font-size:29px;margin-bottom:11px}.role b{font-size:15px}.role small{font-size:12px}.roleHint{font-size:10px!important;line-height:1.5}.partnersHeading{gap:10px}.partnersHeading>span{font-size:25px}.partnersHeading h2{font-size:19px}.partnersHeading p{font-size:12px}.partnerCard{max-width:none;padding:21px}.partnerCard p{font-size:14px;margin:16px 0}.partnerAction{font-size:12px}.sectionTitle h2{font-size:21px}.sectionTitle small{font-size:10px}.sectionEyebrow{font-size:11px}.featureCard{padding:14px;gap:13px;border-radius:19px}.featureIcon{width:43px;height:43px;font-size:24px;border-radius:13px;flex-shrink:0}.featureCard b{font-size:15px}.featureCard small{font-size:12px}.bottom{padding:8px 9px max(10px,env(safe-area-inset-bottom));gap:3px}.nav{font-size:10px;min-height:57px}.nav span{font-size:22px}}
 </style>
 
 </head>
@@ -728,7 +737,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 </header>
 <main>
 <section id="home">
-  <div class="hero">
+  <div class="hero"><div class="heroCity" aria-hidden="true"><svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="citySky" x2="0" y2="1"><stop stop-color="#126075"/><stop offset="1" stop-color="#05262d"/></linearGradient></defs><path fill="url(#citySky)" d="M0 0h500v350H0z"/><circle cx="365" cy="88" r="52" fill="#e3d191" opacity=".3"/><path d="M0 283h40v-45h38v-36h32v81h43v-71h26v-33h34v104h46v-43h45v43h32v-93h32v-32h26v125h30v-43h30v43h56v67H0z" fill="#051d23"/><g fill="none" stroke="#92b9a1" stroke-width="4" opacity=".75"><path d="M289 305C182 238 199 123 260 31C330 135 349 230 289 305Z"/><path d="M260 31c-13 97 92 118 29 274M260 31c39 100-79 146 29 274M229 86l89 122M218 127l97 132M220 183l76 111M284 75l-64 117M312 121l-72 125M326 179l-53 102"/></g><g fill="none" stroke="#163e37" stroke-width="12"><path d="M414 304l-9-164M120 287l11-132"/></g><g fill="#1d5545"><path d="M405 150q-54-91-110-43q74-5 110 43M405 150q27-108 84-66q-66 18-84 66M405 150q-13-108-47-108q12 65 47 108M405 150q58-68 95-13q-63-18-95 13M132 160q-47-75-90-39q62-1 90 39M132 160q24-84 70-53q-52 15-70 53"/></g><path d="M0 317q133-18 242 4t258-10v39H0" fill="#1a4b3c"/></svg><span>Nossa cidade,<br>mais conectada!</span></div>
     <div class="cityEyebrow"><span class="pin"></span> FEITO PARA LUCAS DO RIO VERDE</div>
     <h1>O que você precisa em Lucas agora?</h1>
     <p>Publique seu pedido e receba propostas de empresas e profissionais da cidade. Você compara e escolhe quem vai te atender.</p>
@@ -738,6 +747,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
       <span class="localChip">⚡ Pedidos locais</span>
       <span class="localChip">🤝 Negócios da cidade</span>
     </div>
+
+
+  </div>
 
     <div class="roleGrid">
       <button class="role" data-mode="client">
@@ -753,8 +765,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
         <small class="roleHint">ABRIR PAINEL →</small>
       </button>
     </div>
-  </div>
 
+  <section class="partners" aria-labelledby="partnersTitle">
+    <div class="partnersHeading"><span aria-hidden="true">🤝</span><div><h2 id="partnersTitle">Parceiros de Lucas</h2><p>Quem apoia uma cidade mais conectada.</p></div></div>
+    <a class="partnerCard" href="https://novabytesolucoes.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar o site da Nova-byte Tecnologia">
+      <div class="partnerIdentity"><span class="partnerMark" aria-hidden="true">N<span>▰</span></span><div><strong>NOVA-BYTE</strong><small>TECNOLOGIA</small></div></div>
+      <p>Ferramentas digitais para facilitar seu dia.</p><span class="partnerAction">ACESSAR SITE <span aria-hidden="true">→</span></span>
+    </a>
+  </section>
   <div class="section">
     <div class="sectionTitle">
       <div><div class="sectionEyebrow">Lucas conectado</div><h2>Um app pensado pra cidade</h2></div>
@@ -1480,7 +1498,7 @@ function bindUI(){
 async function boot(){bindUI();session=loadStoredSession();if(session){user=session.user||null;await ensureUser().catch(()=>{});await loadProfile().catch(()=>{});await syncBlocks()}renderAccount();setBadge('TESTE BETA','ok');$('diagnostic').textContent='Anuncia Lucas 1.0 — teste beta. Serviços e imóveis locais em Lucas do Rio Verde.'}
 setInterval(async()=>{if(pollBusy||!session||document.hidden||!navigator.onLine)return;pollBusy=true;try{if(!$('client').classList.contains('hidden'))await loadMyRequests();if(!$('business').classList.contains('hidden')&&business)await Promise.all([loadCityRequests(),loadActiveJobs()]);if(!$('rentals').classList.contains('hidden'))await loadRentalView()}finally{pollBusy=false}},15000);
 window.addEventListener('DOMContentLoaded',boot);
-if(!window.ANUNCIA_NATIVE&&'serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=8').catch(()=>{}));
+if(!window.ANUNCIA_NATIVE&&'serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=9').catch(()=>{}));
 </script>
 </body>
 </html>
