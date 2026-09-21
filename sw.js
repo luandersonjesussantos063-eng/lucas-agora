@@ -1,5 +1,5 @@
-const CACHE='anuncia-lucas-v9-shell';
-const ASSETS=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./privacy.html','./terms.html','./support.html','./delete-account.html','./legal.css'];
+const CACHE='anuncia-lucas-v10-shell';
+const ASSETS=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./privacy.html','./terms.html','./support.html','./delete-account.html','./legal.css','./lucas-city-hero.webp'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>(key.startsWith('anuncia-lucas-')||key.startsWith('lucas-agora-'))&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',event=>{

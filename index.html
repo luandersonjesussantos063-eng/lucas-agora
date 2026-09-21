@@ -718,6 +718,34 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .sectionTitle h2{font-size:24px}.sectionEyebrow{font-size:13px}.sectionTitle small{font-size:13px}.localFeatures{gap:13px}.featureCard{border:1px solid #1e5359;border-radius:22px;padding:17px 23px;gap:21px;background:linear-gradient(105deg,#0b353b,#05262e)}.featureIcon{font-size:27px;width:60px;height:60px;border-radius:18px;background:#07343b;border:1px solid #1b555b}.featureCard b{font-size:19px}.featureCard small{font-size:15px;line-height:1.55;margin-top:5px}.homeRentalsPromo h3{font-size:19px}.homeRentalsPromo p{font-size:14px}.homeRentalsPromo .btn{font-size:13px}.citySignature{font-size:13px;line-height:1.6}
 .bottom{width:min(100%,1060px);max-width:1060px;border-top:1px solid #18504f;background:#031b20f5;gap:6px;padding:10px 20px max(12px,env(safe-area-inset-bottom));backdrop-filter:blur(18px)}.nav{min-height:61px;font-size:13px;border:1px solid transparent;border-radius:17px}.nav span{font-size:25px}.nav.active{border-color:#167768;background:#07352e;color:#83efc9}.legalLinks{margin-bottom:30px}.formCard,.authBox{max-width:650px;margin-left:auto;margin-right:auto}
 @media(max-width:600px){main{padding:12px 13px 20px}header{padding:13px 16px;padding-top:max(13px,env(safe-area-inset-top))}.logoText strong{font-size:20px}.logoText small{font-size:11px}.mark{width:43px;height:43px}.badge{font-size:10px}.hero{padding:22px 18px;border-radius:22px}.hero h1{font-size:31px;letter-spacing:-.9px;max-width:310px}.hero p{font-size:14px;max-width:310px}.heroCity{left:24%;opacity:.52}.heroCity span{display:none}.hero:after{background:linear-gradient(90deg,#032c2cf5,#032c2c99 72%,#032c2c66)}.cityEyebrow{font-size:10px}.localLine{gap:7px}.localChip{font-size:10px;padding:7px 9px}#home>.roleGrid{gap:10px;margin:13px 0 23px}.role{padding:17px 13px;min-height:207px;border-radius:20px}.role>span{position:static;font-size:29px;margin-bottom:11px}.role b{font-size:15px}.role small{font-size:12px}.roleHint{font-size:10px!important;line-height:1.5}.partnersHeading{gap:10px}.partnersHeading>span{font-size:25px}.partnersHeading h2{font-size:19px}.partnersHeading p{font-size:12px}.partnerCard{max-width:none;padding:21px}.partnerCard p{font-size:14px;margin:16px 0}.partnerAction{font-size:12px}.sectionTitle h2{font-size:21px}.sectionTitle small{font-size:10px}.sectionEyebrow{font-size:11px}.featureCard{padding:14px;gap:13px;border-radius:19px}.featureIcon{width:43px;height:43px;font-size:24px;border-radius:13px;flex-shrink:0}.featureCard b{font-size:15px}.featureCard small{font-size:12px}.bottom{padding:8px 9px max(10px,env(safe-area-inset-bottom));gap:3px}.nav{font-size:10px;min-height:57px}.nav span{font-size:22px}}
+
+/* Photo banner and city signature matching the supplied visual reference. */
+.hero{min-height:350px;padding:28px 30px}
+.hero:before{display:none}
+.heroCity{inset:0 0 0 38%;opacity:1;z-index:-2}
+.heroCity img{display:block;width:100%;height:100%;object-fit:cover;object-position:70% center;filter:brightness(.76) saturate(.88)}
+.heroCity span{display:block;right:25px;top:26px;font-family:"Segoe Print","Bradley Hand",cursive;font-size:clamp(20px,2.6vw,30px);font-weight:600;font-style:italic;text-align:center;line-height:1.25;transform:rotate(-7deg);color:#fff;text-shadow:0 2px 8px #001b35;border-bottom:2px solid #39dfb0;padding-bottom:7px}
+.hero:after{height:auto;border:0;border-radius:0;transform:none;pointer-events:none;background:linear-gradient(90deg,#032b2dfc 0%,#032b2df0 35%,#032b2dc4 51%,#032b2d38 71%,transparent 91%)}
+.hero h1{max-width:65%}.hero p{max-width:60%}.hero .localLine{max-width:70%}
+.bottom{grid-template-columns:repeat(5,minmax(0,1fr)) minmax(150px,1.6fr);align-items:center}
+.citySeal{color:#799ca4;text-align:center;justify-self:end;width:190px;max-width:100%;padding-left:10px;line-height:1.3;user-select:none}
+.citySeal svg{display:block;width:100%;height:auto;margin-bottom:3px}
+.citySeal strong{display:block;font-size:11px;font-weight:500;letter-spacing:1.2px;color:#b7cdcf;white-space:nowrap}
+.citySeal small{display:block;font-size:8px;letter-spacing:2px;color:#a5c0c5}
+@media(max-width:760px) and (min-width:601px){.hero h1{font-size:34px}.hero p{font-size:16px}.heroCity span{right:16px;font-size:21px}.citySeal{width:150px}}
+@media(max-width:600px){
+ .hero{min-height:0;padding:22px 18px 238px}
+ .hero h1{max-width:100%;font-size:31px}.hero p{max-width:100%;font-size:14px}.hero .localLine{max-width:100%;margin-top:16px}
+ .heroCity{inset:auto 0 0;height:245px;opacity:1}
+ .heroCity img{object-position:center 62%;filter:brightness(.78) saturate(.9)}
+ .heroCity span{display:block;right:16px;top:34px;font-size:21px}
+ .hero:after{display:none}.heroCity:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#032b2d,transparent 28%);pointer-events:none}.heroCity span{z-index:1}
+ .bottom{grid-template-columns:repeat(5,minmax(0,1fr)) 96px;gap:1px;padding-left:6px;padding-right:7px}
+ .nav{padding-left:1px;padding-right:1px;font-size:9px;min-width:0;min-height:56px}.nav span{font-size:21px}
+ .citySeal{width:96px;padding-left:6px}.citySeal strong{font-size:6px;letter-spacing:.5px}.citySeal small{font-size:5px;letter-spacing:1px}
+}
+@media(max-width:350px){.bottom{grid-template-columns:repeat(5,minmax(0,1fr)) 78px}.citySeal{width:78px}.citySeal strong{font-size:5px}.nav{font-size:8px}}
+
 </style>
 
 </head>
@@ -737,7 +765,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 </header>
 <main>
 <section id="home">
-  <div class="hero"><div class="heroCity" aria-hidden="true"><svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="citySky" x2="0" y2="1"><stop stop-color="#126075"/><stop offset="1" stop-color="#05262d"/></linearGradient></defs><path fill="url(#citySky)" d="M0 0h500v350H0z"/><circle cx="365" cy="88" r="52" fill="#e3d191" opacity=".3"/><path d="M0 283h40v-45h38v-36h32v81h43v-71h26v-33h34v104h46v-43h45v43h32v-93h32v-32h26v125h30v-43h30v43h56v67H0z" fill="#051d23"/><g fill="none" stroke="#92b9a1" stroke-width="4" opacity=".75"><path d="M289 305C182 238 199 123 260 31C330 135 349 230 289 305Z"/><path d="M260 31c-13 97 92 118 29 274M260 31c39 100-79 146 29 274M229 86l89 122M218 127l97 132M220 183l76 111M284 75l-64 117M312 121l-72 125M326 179l-53 102"/></g><g fill="none" stroke="#163e37" stroke-width="12"><path d="M414 304l-9-164M120 287l11-132"/></g><g fill="#1d5545"><path d="M405 150q-54-91-110-43q74-5 110 43M405 150q27-108 84-66q-66 18-84 66M405 150q-13-108-47-108q12 65 47 108M405 150q58-68 95-13q-63-18-95 13M132 160q-47-75-90-39q62-1 90 39M132 160q24-84 70-53q-52 15-70 53"/></g><path d="M0 317q133-18 242 4t258-10v39H0" fill="#1a4b3c"/></svg><span>Nossa cidade,<br>mais conectada!</span></div>
+  <div class="hero"><div class="heroCity" aria-hidden="true"><img src="lucas-city-hero.webp" alt="" fetchpriority="high" width="1536" height="1024"><span>Nossa cidade<br>mais conectada!</span></div>
     <div class="cityEyebrow"><span class="pin"></span> FEITO PARA LUCAS DO RIO VERDE</div>
     <h1>O que você precisa em Lucas agora?</h1>
     <p>Publique seu pedido e receba propostas de empresas e profissionais da cidade. Você compara e escolhe quem vai te atender.</p>
@@ -1080,7 +1108,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 <section id="plans" class="hidden"><button class="topback" data-go="home">← Voltar</button><div class="card"><h2>Gratuito durante o teste</h2><p>O Anuncia Lucas não cobra assinatura nesta versão. Contratações e pagamentos de serviços ou aluguéis são combinados diretamente entre as partes.</p></div></section>
 <section id="account" class="hidden"><button class="topback" data-go="home">← Voltar</button><div class="sectionTitle"><h2>Conta</h2><small id="accountRole"></small></div><div class="card"><div id="accountInfo" class="small muted">Nenhuma conta conectada.</div><button id="logoutBtn" class="btn red hidden" style="margin-top:14px">SAIR DA CONTA</button></div><div class="card" style="margin-top:14px"><h3>Segurança e privacidade</h3><p class="small muted">Denuncie anúncios suspeitos. Nunca antecipe valores sem verificar o anunciante e o imóvel.</p><div class="legalLinks"><a href="support.html">Pedir ajuda ou denunciar</a><a href="delete-account.html">Solicitar exclusão da conta</a></div><button class="btn secondary" id="unblockAllBtn">GERENCIAR USUÁRIOS BLOQUEADOS</button><button class="btn red" id="requestDeletionBtn" style="margin-top:12px">SOLICITAR EXCLUSÃO DA CONTA</button><p id="deletionStatus" class="small muted" role="status"></p></div><div class="notice" id="diagnostic">Anuncia Lucas • plataforma local para conectar moradores e negócios de Lucas do Rio Verde.</div></section>
 <div class="legalLinks"><a href="privacy.html">Privacidade</a><a href="terms.html">Termos de uso</a><a href="support.html">Suporte e denúncias</a><a href="delete-account.html">Excluir minha conta</a></div></main>
-<nav class="bottom"><button class="nav active" data-nav="home"><span>⌂</span>Início</button><button class="nav" data-nav="client"><span>⌕</span>Pedir</button><button class="nav" data-nav="rentals"><span>⌂</span>Imóveis</button><button class="nav" data-nav="business"><span>▣</span>Empresa</button><button class="nav" data-nav="account"><span>●</span>Conta</button></nav>
+<nav class="bottom"><button class="nav active" data-nav="home"><span>⌂</span>Início</button><button class="nav" data-nav="client"><span>⌕</span>Pedir</button><button class="nav" data-nav="rentals"><span>⌂</span>Imóveis</button><button class="nav" data-nav="business"><span>▣</span>Empresa</button><button class="nav" data-nav="account"><span>●</span>Conta</button><div class="citySeal" role="img" aria-label="Lucas do Rio Verde — Sempre em frente"><svg viewBox="0 0 220 65" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 56h204M13 55V42c-12 0-14-13-6-17-2-7 4-13 10-12 6-9 17-3 17 5 9 3 7 16-1 18v19M23 56V29M41 56V35h8V24h7v11h7v21M69 56V44l7-6 7 6v12M87 56V31h5V17h5v14h5v25M106 56V38h11v18M120 56V22h7V9h2V3h2v6h2v13h7v34M125 22h10M146 56V45l6-5 7 5v11M166 56V32h7v-6h7v30M185 56V42c-8-3-8-12-3-15-3-6 3-11 8-9 5-8 13-2 12 4 8 4 5 15-2 17v17M192 56V31"/></g><path d="M203 58c-1-14 10-20 17-21-3 11-6 19-17 21M197 62c-7-1-10-6-10-11 6 0 11 4 10 11" fill="#38c89f"/><path d="M199 64l15-20" fill="none" stroke="#38c89f" stroke-width="1.3"/></svg><strong>LUCAS DO RIO VERDE</strong><small>SEMPRE EM FRENTE</small></div></nav>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </div>
 <script>
@@ -1498,7 +1526,7 @@ function bindUI(){
 async function boot(){bindUI();session=loadStoredSession();if(session){user=session.user||null;await ensureUser().catch(()=>{});await loadProfile().catch(()=>{});await syncBlocks()}renderAccount();setBadge('TESTE BETA','ok');$('diagnostic').textContent='Anuncia Lucas 1.0 — teste beta. Serviços e imóveis locais em Lucas do Rio Verde.'}
 setInterval(async()=>{if(pollBusy||!session||document.hidden||!navigator.onLine)return;pollBusy=true;try{if(!$('client').classList.contains('hidden'))await loadMyRequests();if(!$('business').classList.contains('hidden')&&business)await Promise.all([loadCityRequests(),loadActiveJobs()]);if(!$('rentals').classList.contains('hidden'))await loadRentalView()}finally{pollBusy=false}},15000);
 window.addEventListener('DOMContentLoaded',boot);
-if(!window.ANUNCIA_NATIVE&&'serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=9').catch(()=>{}));
+if(!window.ANUNCIA_NATIVE&&'serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=10').catch(()=>{}));
 </script>
 </body>
 </html>
