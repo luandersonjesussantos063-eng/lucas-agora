@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071a21">
-<meta name="description" content="Lucas Agora — serviços, empresas e profissionais de Lucas do Rio Verde conectados em um só lugar.">
+<meta name="description" content="Anuncia Lucas — serviços, empresas e profissionais de Lucas do Rio Verde conectados em um só lugar.">
 <link rel="manifest" href="manifest.json">
-<title>Lucas Agora</title>
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Anuncia Lucas</title>
 
 <style>
 :root{
@@ -696,6 +698,17 @@ input:focus,textarea:focus,select:focus{
 .nav{font-size:9px;padding-left:2px;padding-right:2px}
 .nav span{font-size:17px}
 
+
+header{padding-top:max(16px,env(safe-area-inset-top))}
+.bottom{padding-bottom:max(12px,env(safe-area-inset-bottom))}
+.app{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+a{color:#86e4b9} button,a,input,select,textarea{touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #86e4b9;outline-offset:3px}
+.legalLinks{display:flex;flex-wrap:wrap;gap:14px;margin:20px 0;font-size:13px;line-height:1.6}
+.legalLinks a{padding:6px 0}.consent{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.6;margin:14px 0}.consent input{width:22px;height:22px;flex-shrink:0;margin-top:2px}
+.safetyActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}.safetyActions button{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--muted);padding:10px;font:inherit;font-size:12px}
+.logoText strong{font-size:17px}.mark{object-fit:cover;border-radius:12px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 
 </head>
@@ -704,13 +717,13 @@ input:focus,textarea:focus,select:focus{
 <header>
   <div class="brand">
     <div class="logo">
-      <div class="mark">LA</div>
+      <img class="mark" src="icon-192.png" alt="" width="44" height="44">
       <div class="logoText">
-        <strong>Lucas Agora</strong>
+        <strong>Anuncia Lucas</strong>
         <small>Lucas do Rio Verde • MT</small>
       </div>
     </div>
-    <div class="badge ok" id="headerBadge">V7 • BETA</div>
+    <div class="badge ok" id="headerBadge">TESTE BETA</div>
   </div>
 </header>
 <main>
@@ -782,7 +795,7 @@ input:focus,textarea:focus,select:focus{
   </div>
 </section>
 <section id="auth" class="hidden">
- <button class="topback" data-go="home">← Voltar</button><div class="authBox"><div class="authTabs"><button id="tabLogin" class="authTab active" data-auth-mode="login">Entrar</button><button id="tabRegister" class="authTab" data-auth-mode="register">Criar conta</button></div><div id="registerFields" class="hidden"><div class="field"><label>Seu nome / nome responsável</label><input id="authName" placeholder="Seu nome"></div><div class="field"><label>Começar no modo</label><select id="authRole" disabled><option value="client">Cliente</option><option value="business">Empresa / profissional</option></select></div></div><div class="field"><label>E-mail</label><input id="authEmail" type="email" autocomplete="email" placeholder="voce@email.com"></div><div class="field"><label>Senha</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="mínimo 6 caracteres"></div><button id="authAction" class="btn">ENTRAR</button><div class="notice" style="margin-top:12px">Uma conta só, dois lados da cidade: você pode pedir serviços e também cadastrar sua empresa quando quiser.</div></div>
+ <button class="topback" data-go="home">← Voltar</button><div class="authBox"><div class="authTabs"><button id="tabLogin" class="authTab active" data-auth-mode="login">Entrar</button><button id="tabRegister" class="authTab" data-auth-mode="register">Criar conta</button></div><div id="registerFields" class="hidden"><div class="field"><label for="authName">Seu nome / nome responsável</label><input id="authName" placeholder="Seu nome"></div><div class="field"><label for="authRole">Começar no modo</label><select id="authRole" disabled><option value="client">Cliente</option><option value="business">Empresa / profissional</option></select></div></div><div class="field"><label for="authEmail">E-mail</label><input id="authEmail" type="email" autocomplete="email" placeholder="voce@email.com"></div><div class="field"><label for="authPassword">Senha</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="mínimo 6 caracteres"></div><label id="termsConsent" class="consent hidden"><input id="acceptTerms" type="checkbox"><span>Tenho 18 anos ou mais, aceito os <a href="terms.html" target="_blank" rel="noopener">Termos de Uso</a> e li a <a href="privacy.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label><button id="authAction" class="btn">ENTRAR</button><div class="notice" style="margin-top:12px">Uma conta só, dois lados da cidade: você pode pedir serviços e também cadastrar sua empresa quando quiser.</div></div>
 </section>
 <section id="client" class="hidden">
   <button class="topback" data-go="home">← Voltar para o início</button>
@@ -867,10 +880,10 @@ input:focus,textarea:focus,select:focus{
 
   <div id="propertyForm" class="card formCard hidden">
     <div class="rentalFormTitle"><span>🏡</span><h3>Anunciar imóvel</h3></div>
-    <div class="formIntro">Seu anúncio ficará visível para pessoas cadastradas no Lucas Agora.</div>
+    <div class="formIntro">Seu anúncio ficará visível para pessoas cadastradas no Anuncia Lucas.</div>
 
-    <div class="field"><label>Seu nome / imobiliária</label><input id="propContactName" placeholder="Ex.: Fernando / Imobiliária Centro"></div>
-    <div class="field"><label>Título do anúncio</label><input id="propTitle" placeholder="Ex.: Casa 2 quartos no Parque das Emas"></div>
+    <div class="field"><label for="propContactName">Seu nome / imobiliária</label><input id="propContactName" placeholder="Ex.: Fernando / Imobiliária Centro"></div>
+    <div class="field"><label for="propTitle">Título do anúncio</label><input id="propTitle" placeholder="Ex.: Casa 2 quartos no Parque das Emas"></div>
 
     <div class="grid2">
       <div class="field">
@@ -883,17 +896,17 @@ input:focus,textarea:focus,select:focus{
           <option value="Comercial">Comercial</option>
         </select>
       </div>
-      <div class="field"><label>Bairro</label><input id="propNeighborhood" placeholder="Ex.: Centro"></div>
+      <div class="field"><label for="propNeighborhood">Bairro</label><input id="propNeighborhood" placeholder="Ex.: Centro"></div>
     </div>
 
     <div class="grid2">
-      <div class="field"><label>Aluguel mensal</label><input id="propPrice" inputmode="decimal" placeholder="Ex.: 2500"></div>
-      <div class="field"><label>Quartos</label><input id="propBedrooms" inputmode="numeric" value="2"></div>
+      <div class="field"><label for="propPrice">Aluguel mensal</label><input id="propPrice" inputmode="decimal" placeholder="Ex.: 2500"></div>
+      <div class="field"><label for="propBedrooms">Quartos</label><input id="propBedrooms" inputmode="numeric" value="2"></div>
     </div>
 
     <div class="grid2">
-      <div class="field"><label>Banheiros</label><input id="propBathrooms" inputmode="numeric" value="1"></div>
-      <div class="field"><label>Vagas de garagem</label><input id="propParking" inputmode="numeric" value="1"></div>
+      <div class="field"><label for="propBathrooms">Banheiros</label><input id="propBathrooms" inputmode="numeric" value="1"></div>
+      <div class="field"><label for="propParking">Vagas de garagem</label><input id="propParking" inputmode="numeric" value="1"></div>
     </div>
 
     <div class="grid2">
@@ -907,15 +920,15 @@ input:focus,textarea:focus,select:focus{
       </div>
     </div>
 
-    <div class="field"><label>WhatsApp para contato</label><input id="propPhone" inputmode="tel" placeholder="(65) 99999-9999"></div>
-    <div class="field"><label>Descrição</label><textarea id="propDescription" placeholder="Fale sobre o imóvel, localização, caução, condomínio e outros detalhes."></textarea></div>
+    <div class="field"><label for="propPhone">WhatsApp para contato</label><input id="propPhone" inputmode="tel" placeholder="(65) 99999-9999"></div>
+    <div class="field"><label for="propDescription">Descrição</label><textarea id="propDescription" placeholder="Fale sobre o imóvel, localização, caução, condomínio e outros detalhes."></textarea></div>
     <div class="field">
       <label>Foto principal <span class="muted">(opcional)</span></label>
       <input id="propImage" class="fileInput" type="file" accept="image/jpeg,image/png,image/webp">
-      <div class="fileHint">JPG, PNG ou WEBP. Máximo recomendado: 5 MB.</div>
+      <div class="fileHint">JPG, PNG ou WEBP. Máximo: 5 MB.</div>
     </div>
 
-    <button class="btn" id="createPropertyBtn">PUBLICAR IMÓVEL</button>
+    <p class="notice">Seu nome, WhatsApp, bairro, descrição e foto serão visíveis para quem acessar o anúncio. Publique somente fotos e dados que você pode divulgar.</p><button class="btn" id="createPropertyBtn">PUBLICAR IMÓVEL</button>
     <button class="btn secondary" id="cancelPropertyFormBtn" style="margin-top:7px">CANCELAR</button>
   </div>
 
@@ -923,7 +936,7 @@ input:focus,textarea:focus,select:focus{
     <div class="rentalFormTitle"><span>🔎</span><h3>Estou procurando imóvel</h3></div>
     <div class="formIntro">Publique o que você procura. Proprietários e imobiliárias poderão entrar em contato.</div>
 
-    <div class="field"><label>Seu nome</label><input id="wantedName" placeholder="Seu nome"></div>
+    <div class="field"><label for="wantedName">Seu nome</label><input id="wantedName" placeholder="Seu nome"></div>
 
     <div class="grid2">
       <div class="field">
@@ -937,12 +950,12 @@ input:focus,textarea:focus,select:focus{
           <option value="Qualquer">Qualquer</option>
         </select>
       </div>
-      <div class="field"><label>Bairro desejado</label><input id="wantedNeighborhood" placeholder="Ex.: qualquer bairro"></div>
+      <div class="field"><label for="wantedNeighborhood">Bairro desejado</label><input id="wantedNeighborhood" placeholder="Ex.: qualquer bairro"></div>
     </div>
 
     <div class="grid2">
-      <div class="field"><label>Até quanto por mês?</label><input id="wantedMaxPrice" inputmode="decimal" placeholder="Ex.: 2500"></div>
-      <div class="field"><label>Mínimo de quartos</label><input id="wantedBedrooms" inputmode="numeric" value="2"></div>
+      <div class="field"><label for="wantedMaxPrice">Até quanto por mês?</label><input id="wantedMaxPrice" inputmode="decimal" placeholder="Ex.: 2500"></div>
+      <div class="field"><label for="wantedBedrooms">Mínimo de quartos</label><input id="wantedBedrooms" inputmode="numeric" value="2"></div>
     </div>
 
     <div class="field">
@@ -950,10 +963,10 @@ input:focus,textarea:focus,select:focus{
       <select id="wantedPets"><option value="false">Não necessariamente</option><option value="true">Sim</option></select>
     </div>
 
-    <div class="field"><label>Seu WhatsApp</label><input id="wantedPhone" inputmode="tel" placeholder="(65) 99999-9999"></div>
-    <div class="field"><label>Outros detalhes</label><textarea id="wantedNotes" placeholder="Ex.: preciso de garagem, mudança em outubro, próximo ao centro..."></textarea></div>
+    <div class="field"><label for="wantedPhone">Seu WhatsApp</label><input id="wantedPhone" inputmode="tel" placeholder="(65) 99999-9999"></div>
+    <div class="field"><label for="wantedNotes">Outros detalhes</label><textarea id="wantedNotes" placeholder="Ex.: preciso de garagem, mudança em outubro, próximo ao centro..."></textarea></div>
 
-    <button class="btn" id="createWantedBtn">PUBLICAR PROCURA</button>
+    <p class="notice">Seu nome, WhatsApp e os detalhes desta procura ficam visíveis para outros usuários.</p><button class="btn" id="createWantedBtn">PUBLICAR PROCURA</button>
     <button class="btn secondary" id="cancelWantedFormBtn" style="margin-top:7px">CANCELAR</button>
   </div>
 
@@ -1003,10 +1016,10 @@ input:focus,textarea:focus,select:focus{
 
     <div class="card formCard">
       <div class="formIntro">🏪 Crie seu perfil comercial para começar a receber pedidos de moradores da cidade.</div>
-      <div class="field"><label>Nome da empresa / profissional</label><input id="bizName" placeholder="Ex.: Carlos Elétrica"></div>
-      <div class="field"><label>Categoria</label><input id="bizCategory" placeholder="Ex.: Eletricista"></div>
-      <div class="field"><label>Bairro</label><input id="bizNeighborhood" placeholder="Ex.: Centro"></div>
-      <div class="field"><label>WhatsApp comercial</label><input id="bizPhone" placeholder="(65) 99999-9999"></div>
+      <div class="field"><label for="bizName">Nome da empresa / profissional</label><input id="bizName" placeholder="Ex.: Carlos Elétrica"></div>
+      <div class="field"><label for="bizCategory">Categoria</label><input id="bizCategory" placeholder="Ex.: Eletricista"></div>
+      <div class="field"><label for="bizNeighborhood">Bairro</label><input id="bizNeighborhood" placeholder="Ex.: Centro"></div>
+      <div class="field"><label for="bizPhone">WhatsApp comercial</label><input id="bizPhone" placeholder="(65) 99999-9999"></div>
       <button class="btn" id="createBusinessBtn">CRIAR PERFIL COMERCIAL</button>
     </div>
   </div>
@@ -1046,17 +1059,18 @@ input:focus,textarea:focus,select:focus{
     </div>
   </div>
 </section>
-<section id="plans" class="hidden"><button class="topback" data-go="business">← Voltar</button><div class="sectionTitle"><h2>Planos</h2><small>MVP</small></div><div class="plan"><h3>Grátis</h3><div class="price">R$ 0</div><ul><li>Perfil básico</li><li>Até 5 respostas/mês futuramente</li><li>Pedidos próximos</li></ul></div><div class="plan best"><div class="ribbon">PRO</div><h3>Pro</h3><div class="price">R$ 49,90 <span class="small muted">/mês</span></div><ul><li>Respostas ilimitadas</li><li>Perfil completo</li><li>Mais destaque</li><li>Catálogo e promoções</li></ul></div></section>
-<section id="account" class="hidden"><button class="topback" data-go="home">← Voltar</button><div class="sectionTitle"><h2>Conta</h2><small id="accountRole"></small></div><div class="card"><div id="accountInfo" class="small muted">Nenhuma conta conectada.</div><button id="logoutBtn" class="btn red hidden" style="margin-top:14px">SAIR DA CONTA</button></div><div class="notice" id="diagnostic">Lucas Agora • plataforma local para conectar moradores e negócios de Lucas do Rio Verde.</div></section>
-</main>
+<section id="plans" class="hidden"><button class="topback" data-go="home">← Voltar</button><div class="card"><h2>Gratuito durante o teste</h2><p>O Anuncia Lucas não cobra assinatura nesta versão. Contratações e pagamentos de serviços ou aluguéis são combinados diretamente entre as partes.</p></div></section>
+<section id="account" class="hidden"><button class="topback" data-go="home">← Voltar</button><div class="sectionTitle"><h2>Conta</h2><small id="accountRole"></small></div><div class="card"><div id="accountInfo" class="small muted">Nenhuma conta conectada.</div><button id="logoutBtn" class="btn red hidden" style="margin-top:14px">SAIR DA CONTA</button></div><div class="card" style="margin-top:14px"><h3>Segurança e privacidade</h3><p class="small muted">Denuncie anúncios suspeitos. Nunca antecipe valores sem verificar o anunciante e o imóvel.</p><div class="legalLinks"><a href="support.html">Pedir ajuda ou denunciar</a><a href="delete-account.html">Solicitar exclusão da conta</a></div><button class="btn secondary" id="unblockAllBtn">GERENCIAR USUÁRIOS BLOQUEADOS</button><button class="btn red" id="requestDeletionBtn" style="margin-top:12px">SOLICITAR EXCLUSÃO DA CONTA</button><p id="deletionStatus" class="small muted" role="status"></p></div><div class="notice" id="diagnostic">Anuncia Lucas • plataforma local para conectar moradores e negócios de Lucas do Rio Verde.</div></section>
+<div class="legalLinks"><a href="privacy.html">Privacidade</a><a href="terms.html">Termos de uso</a><a href="support.html">Suporte e denúncias</a><a href="delete-account.html">Excluir minha conta</a></div></main>
 <nav class="bottom"><button class="nav active" data-nav="home"><span>⌂</span>Início</button><button class="nav" data-nav="client"><span>⌕</span>Pedir</button><button class="nav" data-nav="rentals"><span>⌂</span>Imóveis</button><button class="nav" data-nav="business"><span>▣</span>Empresa</button><button class="nav" data-nav="account"><span>●</span>Conta</button></nav>
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 </div>
 <script>
 'use strict';
 const SUPABASE_URL='https://vajlhodqxskozuxxlujv.supabase.co';
 const SUPABASE_KEY='sb_publishable_uT0b4y0Bex1k1QWZoyIfKg_K0pm-yS3';
 const SESSION_KEY='lucas_agora_session_v5';
+let refreshing=null;
 let session=null,user=null,profile=null,business=null,pendingMode='client',pendingDestination='client',authMode='login',selectedCategory='Casa',pollBusy=false,rentalView='available',propertyCache=[],wantedCache=[];
 const $=id=>document.getElementById(id);
 function toast(msg,isError=false){const t=$('toast');t.textContent=msg;t.classList.toggle('error',isError);t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),3200)}
@@ -1073,32 +1087,37 @@ async function rawFetch(path,{method='GET',body=null,headers={},auth=true,retry=
  const txt=await res.text();let data=null;try{data=txt?JSON.parse(txt):null}catch{data=txt}
  if(res.status===401&&auth&&retry&&session?.refresh_token){const ok=await refreshSession();if(ok)return rawFetch(path,{method,body,headers,auth,retry:false})}
  if(!res.ok)throw new Error(errorMessage(data,res.status));
- setBadge('V7 • BETA','ok');return data
+ setBadge('TESTE BETA','ok');return data
 }
-async function refreshSession(){if(!session?.refresh_token)return false;try{const data=await rawFetch('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:session.refresh_token},auth:false,retry:false});adoptSession(data);return true}catch{logout(false);return false}}
+async function refreshSession(){
+ if(refreshing)return refreshing;
+ if(!session?.refresh_token)return false;
+ refreshing=(async()=>{try{const data=await rawFetch('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:session.refresh_token},auth:false,retry:false});return adoptSession(data)}catch{logout(false);return false}})();
+ try{return await refreshing}finally{refreshing=null}
+}
 function adoptSession(data){if(!data?.access_token)return false;saveSession({access_token:data.access_token,refresh_token:data.refresh_token,expires_in:data.expires_in||3600,expires_at:Date.now()+(data.expires_in||3600)*1000,user:data.user||session?.user||null});user=data.user||session?.user||user;return true}
 async function ensureUser(){if(!session)return false;if(session.expires_at&&Date.now()>session.expires_at-60000)await refreshSession();if(user)return true;try{user=await rawFetch('/auth/v1/user');return !!user}catch{return false}}
-async function signUp(email,password,fullName){const data=await rawFetch('/auth/v1/signup',{method:'POST',body:{email,password,data:{full_name:fullName,role:pendingMode}},auth:false});if(data?.access_token){adoptSession(data);return {signedIn:true}}return {signedIn:false,data}}
+async function signUp(email,password,fullName){const data=await rawFetch('/auth/v1/signup',{method:'POST',body:{email,password,data:{full_name:fullName,role:pendingMode,terms_version:'2026-09-20',terms_accepted_at:new Date().toISOString()}},auth:false});if(data?.access_token){adoptSession(data);return {signedIn:true}}return {signedIn:false,data}}
 async function signIn(email,password){const data=await rawFetch('/auth/v1/token?grant_type=password',{method:'POST',body:{email,password},auth:false});if(!adoptSession(data))throw new Error('Login não retornou uma sessão válida.');return true}
 async function rest(path,opts={}){return rawFetch('/rest/v1/'+path,opts)}
 async function loadProfile(){if(!await ensureUser())return;const rows=await rest(`profiles?id=eq.${encodeURIComponent(user.id)}&select=*`);profile=Array.isArray(rows)?rows[0]||null:null}
 async function loadBusiness(){if(!await ensureUser())return null;const rows=await rest(`businesses?owner_id=eq.${encodeURIComponent(user.id)}&select=*`);business=Array.isArray(rows)?rows[0]||null:null;return business}
-function setAuthMode(mode){authMode=mode;$('tabLogin').classList.toggle('active',mode==='login');$('tabRegister').classList.toggle('active',mode==='register');$('registerFields').classList.toggle('hidden',mode!=='register');$('authAction').textContent=mode==='login'?'ENTRAR':'CRIAR CONTA';$('authRole').value=pendingMode}
+function setAuthMode(mode){authMode=mode;$('tabLogin').classList.toggle('active',mode==='login');$('tabRegister').classList.toggle('active',mode==='register');$('registerFields').classList.toggle('hidden',mode!=='register');$('authAction').textContent=mode==='login'?'ENTRAR':'CRIAR CONTA';$('authRole').value=pendingMode;$('termsConsent').classList.toggle('hidden',mode!=='register');$('authPassword').autocomplete=mode==='register'?'new-password':'current-password'}
 async function routeMode(mode,navEl=null){pendingMode=mode;pendingDestination=mode;if(!session){$('authRole').value=mode;show('auth',navEl);setAuthMode('login');return}if(!await ensureUser()){toast('Sua sessão expirou. Entre novamente.',true);show('auth',navEl);return}if(mode==='client'){show('client',navEl);await loadProfile().catch(()=>{});$('clientHello').textContent=profile?.full_name||user?.user_metadata?.full_name||user?.email||'';await loadMyRequests()}else{show('business',navEl);await loadBusinessPanel()}}
-async function submitAuth(){const btn=$('authAction');const email=$('authEmail').value.trim();const password=$('authPassword').value;try{btn.disabled=true;if(!email||password.length<6)throw new Error('Informe e-mail e senha com pelo menos 6 caracteres.');if(authMode==='register'){const fullName=$('authName').value.trim();if(!fullName)throw new Error('Informe seu nome.');const r=await signUp(email,password,fullName);if(!r.signedIn){toast('Conta criada. Se a confirmação de e-mail estiver ativa, confirme o e-mail e depois entre.');setAuthMode('login');return}toast('Conta criada e conectada.');await loadProfile().catch(()=>{});if(pendingDestination==='rentals')await openRentals();else await routeMode(pendingMode)}else{await signIn(email,password);await loadProfile().catch(()=>{});toast('Login realizado.');if(pendingDestination==='rentals')await openRentals();else await routeMode(pendingMode)}}catch(e){toast(e.message||'Erro no acesso.',true)}finally{btn.disabled=false}}
+async function submitAuth(){const btn=$('authAction');const email=$('authEmail').value.trim();const password=$('authPassword').value;try{btn.disabled=true;if(!email||password.length<6)throw new Error('Informe e-mail e senha com pelo menos 6 caracteres.');if(authMode==='register'){const fullName=$('authName').value.trim();if(!fullName)throw new Error('Informe seu nome.');if(!$('acceptTerms').checked)throw new Error('Confirme sua idade e aceite os Termos de Uso para criar a conta.');const r=await signUp(email,password,fullName);if(!r.signedIn){toast('Conta criada. Se a confirmação de e-mail estiver ativa, confirme o e-mail e depois entre.');setAuthMode('login');return}toast('Conta criada e conectada.');await loadProfile().catch(()=>{});await syncBlocks();if(pendingDestination==='rentals')await openRentals();else await routeMode(pendingMode)}else{await signIn(email,password);await loadProfile().catch(()=>{});await syncBlocks();toast('Login realizado.');if(pendingDestination==='rentals')await openRentals();else await routeMode(pendingMode)}}catch(e){toast(e.message||'Erro no acesso.',true)}finally{btn.disabled=false}}
 function pickCategory(btn){document.querySelectorAll('.cat').forEach(c=>c.classList.remove('active'));btn.classList.add('active');selectedCategory=btn.dataset.cat;const ex={Casa:'Minha tomada queimou e parte da casa ficou sem energia.',Veículo:'Meu carro não está pegando e preciso de ajuda.',Comida:'Quero duas pizzas grandes e refrigerante por até R$100.',Tecnologia:'Meu notebook não liga e preciso de orçamento.',Beleza:'Quero um horário ainda hoje.',Outros:''};$('need').value=ex[selectedCategory]||''}
-async function createRequest(){const btn=$('publishBtn');try{btn.disabled=true;if(!await ensureUser())throw new Error('Entre na sua conta primeiro.');const description=$('need').value.trim(),urgency=$('urgency').value,neighborhood=$('bairro').value.trim(),phone=$('clientPhone').value.trim(),address=$('clientAddress').value.trim(),reference=$('clientReference').value.trim();if(!description||!neighborhood)throw new Error('Descreva o pedido e informe o bairro.');if(!phone)throw new Error('Informe seu telefone/WhatsApp.');if(!address)throw new Error('Informe o endereço completo.');await rest('rpc/create_request_with_contact',{method:'POST',body:{p_category:selectedCategory,p_description:description,p_urgency:urgency,p_neighborhood:neighborhood,p_phone:phone,p_address:address,p_address_reference:reference}});$('need').value='';$('clientReference').value='';toast('Pedido publicado. Seus dados privados só serão liberados para a empresa escolhida.');await loadMyRequests()}catch(e){toast(e.message,true)}finally{btn.disabled=false}}
-async function loadMyRequests(){if(!session||!user)return;try{const requests=await rest(`requests?client_id=eq.${encodeURIComponent(user.id)}&select=*&order=created_at.desc`);$('myCount').textContent=requests.length;const box=$('myRequests');if(!requests.length){box.innerHTML='<div class="empty">Você ainda não publicou nenhum pedido.</div>';return}const cards=[];for(const r of requests){const offers=await rest(`offers?request_id=eq.${encodeURIComponent(r.id)}&select=id,price,eta_minutes,message,status,business_id,created_at&order=created_at.asc`);let names={};const ids=[...new Set(offers.map(o=>o.business_id).filter(Boolean))];if(ids.length){const encoded=ids.map(x=>`"${x}"`).join(',');const bs=await rest(`businesses?id=in.(${encodeURIComponent(encoded)})&select=id,name,rating`);bs.forEach(b=>names[b.id]=b)}cards.push(renderClientRequest(r,offers,names))}box.innerHTML=cards.join('')}catch(e){toast('Erro ao carregar pedidos: '+e.message,true)}}
-function renderClientRequest(r,offers,names){return `<div class="request ${r.urgency==='Agora'?'urgent':''}"><div class="small muted">${esc(r.category)} • ${formatDate(r.created_at)}</div><h3>${esc(r.description)}</h3><div class="meta">📍 ${esc(r.neighborhood)} • ${esc(r.urgency)}</div><div class="tags"><span class="tag">${offers.length} proposta(s)</span><span class="tag">${esc(statusText(r.status))}</span></div>${offers.map(o=>{const b=names[o.business_id]||{};const accepted=o.status==='accepted';return `<div class="offer"><div class="offerTop"><b>${esc(b.name||'Empresa')}</b><b>R$ ${money(o.price)}</b></div><div class="small muted" style="margin-top:5px">⭐ ${esc(b.rating??'5.0')} • ${o.eta_minutes??'—'} min</div><div class="small" style="margin-top:7px">${esc(o.message)}</div>${accepted?'<div class="tag statusChosen" style="margin-top:10px;display:inline-block">✓ Empresa escolhida</div>':''}${r.status==='open'?`<button class="btn acceptOfferBtn" style="margin-top:10px" data-request="${r.id}" data-offer="${o.id}">ESCOLHER ESTA EMPRESA</button>`:''}</div>`}).join('')}</div>`}
+async function createRequest(){const btn=$('publishBtn');try{btn.disabled=true;if(!await ensureUser())throw new Error('Entre na sua conta primeiro.');const description=$('need').value.trim(),urgency=$('urgency').value,neighborhood=$('bairro').value.trim(),phone=$('clientPhone').value.trim(),address=$('clientAddress').value.trim(),reference=$('clientReference').value.trim();if(!description||!neighborhood)throw new Error('Descreva o pedido e informe o bairro.');if(!validPhone(phone))throw new Error('Informe seu telefone/WhatsApp com DDD.');if(!address)throw new Error('Informe o endereço completo.');await rest('rpc/create_request_with_contact',{method:'POST',body:{p_category:selectedCategory,p_description:description,p_urgency:urgency,p_neighborhood:neighborhood,p_phone:phone,p_address:address,p_address_reference:reference}});$('need').value='';$('clientReference').value='';toast('Pedido publicado. Seus dados privados só serão liberados para a empresa escolhida.');await loadMyRequests()}catch(e){toast(e.message,true)}finally{btn.disabled=false}}
+async function loadMyRequests(){if(!session||!user)return;try{const requests=await rest(`requests?client_id=eq.${encodeURIComponent(user.id)}&select=*&order=created_at.desc`);$('myCount').textContent=requests.length;const box=$('myRequests');if(!requests.length){box.innerHTML='<div class="empty">Você ainda não publicou nenhum pedido.</div>';return}const cards=[];for(const r of requests){const offers=await rest(`offers?request_id=eq.${encodeURIComponent(r.id)}&select=id,price,eta_minutes,message,status,business_id,created_at&order=created_at.asc`);let names={};const ids=[...new Set(offers.map(o=>o.business_id).filter(Boolean))];if(ids.length){const encoded=ids.map(x=>`"${x}"`).join(',');const bs=await rest(`businesses?id=in.(${encodeURIComponent(encoded)})&select=id,name,owner_id`);bs.forEach(b=>names[b.id]=b)}cards.push(renderClientRequest(r,offers,names))}box.innerHTML=cards.join('')}catch(e){toast('Erro ao carregar pedidos: '+e.message,true)}}
+function renderClientRequest(r,offers,names){return `<div class="request ${r.urgency==='Agora'?'urgent':''}"><div class="small muted">${esc(r.category)} • ${formatDate(r.created_at)}</div><h3>${esc(r.description)}</h3><div class="meta">📍 ${esc(r.neighborhood)} • ${esc(r.urgency)}</div><div class="tags"><span class="tag">${offers.length} proposta(s)</span><span class="tag">${esc(statusText(r.status))}</span></div>${offers.filter(o=>!isBlocked(names[o.business_id]?.owner_id)).map(o=>{const b=names[o.business_id]||{};const accepted=o.status==='accepted';return `<div class="offer"><div class="offerTop"><b>${esc(b.name||'Empresa')}</b><b>R$ ${money(o.price)}</b></div><div class="small muted" style="margin-top:5px">${esc(o.eta_minutes??'—')} min</div><div class="small" style="margin-top:7px">${esc(o.message)}</div>${safetyActions('proposta',o.id,b.owner_id)}${accepted?'<div class="tag statusChosen" style="margin-top:10px;display:inline-block">✓ Empresa escolhida</div>':''}${r.status==='open'?`<button class="btn acceptOfferBtn" style="margin-top:10px" data-request="${r.id}" data-offer="${o.id}">ESCOLHER ESTA EMPRESA</button>`:''}</div>`}).join('')}</div>`}
 async function acceptOffer(requestId,offerId){try{await rest('rpc/accept_offer',{method:'POST',body:{p_request_id:requestId,p_offer_id:offerId}});toast('Empresa escolhida.');await loadMyRequests()}catch(e){toast(e.message,true)}}
 async function createBusiness(){const btn=$('createBusinessBtn');try{btn.disabled=true;if(!await ensureUser())throw new Error('Entre na sua conta primeiro.');const name=$('bizName').value.trim(),category=$('bizCategory').value.trim()||'Outros',neighborhood=$('bizNeighborhood').value.trim(),phone=$('bizPhone').value.trim();if(!name)throw new Error('Informe o nome da empresa.');const rows=await rest('businesses',{method:'POST',body:{owner_id:user.id,name,category,neighborhood,phone},headers:{Prefer:'return=representation'}});business=Array.isArray(rows)?rows[0]:null;toast('Perfil da empresa criado.');await loadBusinessPanel()}catch(e){toast(e.message,true)}finally{btn.disabled=false}}
 async function loadBusinessPanel(){try{await loadBusiness();const setup=$('businessSetup'),panel=$('businessPanel');if(!business){setup.classList.remove('hidden');panel.classList.add('hidden');return}setup.classList.add('hidden');panel.classList.remove('hidden');$('bizTitle').textContent=business.name;$('availabilitySwitch').classList.toggle('on',!!business.is_available);$('availabilityText').textContent=business.is_available?'🟢 Disponível agora':'⚫ Indisponível';await Promise.all([loadCityRequests(),loadActiveJobs()])}catch(e){toast('Erro no painel da empresa: '+e.message,true)}}
-async function loadCityRequests(){if(!business)return;try{const requests=await rest('requests?status=eq.open&select=*&order=created_at.desc&limit=50');const myOffers=await rest(`offers?business_id=eq.${encodeURIComponent(business.id)}&select=request_id`);const offered=new Set(myOffers.map(x=>x.request_id));$('metricRequests').textContent=requests.length;$('metricResponses').textContent=offered.size;$('metricOpen').textContent=requests.length;const box=$('businessRequests');if(!requests.length){box.innerHTML='<div class="empty">Nenhum pedido aberto neste momento.</div>';return}box.innerHTML=requests.map(r=>`<div class="request ${r.urgency==='Agora'?'urgent':''}">${r.urgency==='Agora'?'<div class="small" style="color:#ffaaaa;font-weight:900">🔴 PRECISA AGORA</div>':''}<h3>${esc(r.description)}</h3><div class="meta">📍 ${esc(r.neighborhood)} • ${esc(r.category)} • ${esc(r.urgency)}</div><button class="btn respondBtn ${offered.has(r.id)?'secondary':''}" style="margin-top:12px" data-request="${r.id}">${offered.has(r.id)?'ATUALIZAR PROPOSTA':'RESPONDER'}</button></div>`).join('')}catch(e){toast('Erro ao carregar pedidos da cidade: '+e.message,true)}}
+async function loadCityRequests(){if(!business)return;try{const requests=(await rest('requests?status=eq.open&select=*&order=created_at.desc&limit=50')).filter(r=>!isBlocked(r.client_id));const myOffers=await rest(`offers?business_id=eq.${encodeURIComponent(business.id)}&select=request_id`);const offered=new Set(myOffers.map(x=>x.request_id));$('metricRequests').textContent=requests.length;$('metricResponses').textContent=offered.size;$('metricOpen').textContent=requests.length;const box=$('businessRequests');if(!requests.length){box.innerHTML='<div class="empty">Nenhum pedido aberto neste momento.</div>';return}box.innerHTML=requests.map(r=>`<div class="request ${r.urgency==='Agora'?'urgent':''}">${r.urgency==='Agora'?'<div class="small" style="color:#ffaaaa;font-weight:900">🔴 PRECISA AGORA</div>':''}<h3>${esc(r.description)}</h3><div class="meta">📍 ${esc(r.neighborhood)} • ${esc(r.category)} • ${esc(r.urgency)}</div>${safetyActions('pedido',r.id,r.client_id)}<button class="btn respondBtn ${offered.has(r.id)?'secondary':''}" style="margin-top:12px" data-request="${r.id}">${offered.has(r.id)?'ATUALIZAR PROPOSTA':'RESPONDER'}</button></div>`).join('')}catch(e){toast('Erro ao carregar pedidos da cidade: '+e.message,true)}}
 async function loadActiveJobs(){if(!business)return;const box=$('activeJobs');try{const accepted=await rest(`offers?business_id=eq.${encodeURIComponent(business.id)}&status=eq.accepted&select=request_id,price,eta_minutes,message`);if(!accepted.length){$('activeCount').textContent='0';box.innerHTML='<div class="empty">Nenhum atendimento em andamento.</div>';return}const ids=[...new Set(accepted.map(x=>x.request_id))];const idFilter=ids.join(',');const requests=await rest(`requests?id=in.(${idFilter})&status=eq.chosen&select=*`);$('activeCount').textContent=String(requests.length);if(!requests.length){box.innerHTML='<div class="empty">Nenhum atendimento em andamento.</div>';return}const privates=await rest(`request_private?request_id=in.(${idFilter})&select=*`);const privateMap=Object.fromEntries(privates.map(x=>[x.request_id,x]));const offerMap=Object.fromEntries(accepted.map(x=>[x.request_id,x]));box.innerHTML=requests.map(r=>renderActiveJob(r,privateMap[r.id],offerMap[r.id])).join('')}catch(e){toast('Erro ao carregar atendimentos: '+e.message,true)}}
-function renderActiveJob(r,p,o){const phone=p?.phone||'';const phoneDigits=phone.replace(/\D/g,'');const wa=phoneDigits.startsWith('55')?phoneDigits:(phoneDigits.length>=10?'55'+phoneDigits:phoneDigits);const mapQuery=encodeURIComponent([p?.address,r.neighborhood,'Lucas do Rio Verde MT'].filter(Boolean).join(', '));return `<div class="request"><div class="small statusChosen" style="font-weight:900">🟡 EM ATENDIMENTO</div><h3>${esc(r.description)}</h3><div class="meta">📍 ${esc(r.neighborhood)} • ${esc(r.category)}</div><div class="contactBox"><b>${esc(p?.client_name||'Cliente')}</b><div class="contactLine">📱 ${esc(phone||'Telefone não disponível')}</div><div class="contactLine">🏠 ${esc(p?.address||'Endereço não disponível')}</div>${p?.address_reference?`<div class="contactLine">📌 ${esc(p.address_reference)}</div>`:''}<div class="contactLine">💰 Proposta aceita: R$ ${money(o?.price)}</div><div class="contactLine">⏱ Previsão informada: ${o?.eta_minutes??'—'} min</div></div><div class="actionGrid"><button class="btn blue whatsappBtn" data-phone="${esc(wa)}">WHATSAPP</button><button class="btn secondary mapBtn" data-map="${mapQuery}">ABRIR NO MAPA</button></div><button class="btn completeJobBtn" style="margin-top:8px" data-request="${r.id}">CONCLUIR ATENDIMENTO</button></div>`}
+function renderActiveJob(r,p,o){const phone=p?.phone||'';const phoneDigits=phone.replace(/\D/g,'');const wa=normalizePhone(phoneDigits);const mapQuery=encodeURIComponent([p?.address,r.neighborhood,'Lucas do Rio Verde MT'].filter(Boolean).join(', '));return `<div class="request"><div class="small statusChosen" style="font-weight:900">🟡 EM ATENDIMENTO</div><h3>${esc(r.description)}</h3><div class="meta">📍 ${esc(r.neighborhood)} • ${esc(r.category)}</div><div class="contactBox"><b>${esc(p?.client_name||'Cliente')}</b><div class="contactLine">📱 ${esc(phone||'Telefone não disponível')}</div><div class="contactLine">🏠 ${esc(p?.address||'Endereço não disponível')}</div>${p?.address_reference?`<div class="contactLine">📌 ${esc(p.address_reference)}</div>`:''}<div class="contactLine">💰 Proposta aceita: R$ ${money(o?.price)}</div><div class="contactLine">⏱ Previsão informada: ${o?.eta_minutes??'—'} min</div></div><div class="actionGrid"><button class="btn blue whatsappBtn" data-phone="${esc(wa)}">WHATSAPP</button><button class="btn secondary mapBtn" data-map="${mapQuery}">ABRIR NO MAPA</button></div><button class="btn completeJobBtn" style="margin-top:8px" data-request="${r.id}">CONCLUIR ATENDIMENTO</button></div>`}
 async function completeJob(requestId){if(!confirm('Marcar este atendimento como concluído?'))return;try{await rest('rpc/business_complete_request',{method:'POST',body:{p_request_id:requestId}});toast('Atendimento concluído.');await Promise.all([loadCityRequests(),loadActiveJobs()])}catch(e){toast(e.message,true)}}
-function openWhatsApp(phone){if(!phone){toast('Telefone não disponível.',true);return}window.open(`https://wa.me/${phone}`,'_blank','noopener')}
-function openMap(encoded){if(!encoded){toast('Endereço não disponível.',true);return}window.open(`https://www.google.com/maps/search/?api=1&query=${encoded}`,'_blank','noopener')}
+function openWhatsApp(phone){if(!validPhone(phone)){toast('Telefone inválido ou não disponível.',true);return}openExternal(`https://wa.me/${normalizePhone(phone)}`)}
+function openMap(encoded){if(!encoded){toast('Endereço não disponível.',true);return}openExternal(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(decodeURIComponent(encoded))}`)}
 
 async function openRentals(navEl=null){
  pendingDestination='rentals';
@@ -1138,7 +1157,7 @@ async function uploadPropertyImage(file){
  if(!file)return '';
  if(!await ensureUser())throw new Error('Entre na sua conta primeiro.');
  if(file.size>5*1024*1024)throw new Error('A foto deve ter no máximo 5 MB.');
- const ext=(file.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'');
+ const ext=({'image/jpeg':'jpg','image/png':'png','image/webp':'webp'})[file.type];if(!ext)throw new Error('Envie uma imagem JPG, PNG ou WEBP.');
  const path=`${user.id}/${Date.now()}.${ext||'jpg'}`;
  const headers={
    'apikey':SUPABASE_KEY,
@@ -1154,6 +1173,7 @@ async function uploadPropertyImage(file){
 }
 
 async function createRentalProperty(){
+ let pendingPhoto='';
  const btn=$('createPropertyBtn');
  try{
    btn.disabled=true;
@@ -1163,7 +1183,7 @@ async function createRentalProperty(){
    const title=$('propTitle').value.trim();
    const propertyType=$('propType').value;
    const neighborhood=$('propNeighborhood').value.trim();
-   const price=Number(String($('propPrice').value).replace(',','.'));
+   const price=parseAmount($('propPrice').value);
    const bedrooms=Number($('propBedrooms').value||0);
    const bathrooms=Number($('propBathrooms').value||0);
    const parking=Number($('propParking').value||0);
@@ -1174,12 +1194,12 @@ async function createRentalProperty(){
    const file=$('propImage').files?.[0]||null;
 
    if(!contactName||!title||!neighborhood||!phone)throw new Error('Preencha nome, título, bairro e WhatsApp.');
-   if(!Number.isFinite(price)||price<=0)throw new Error('Informe um valor de aluguel válido.');
+   if(!validCounts(bedrooms,bathrooms,parking))throw new Error('Quartos, banheiros e vagas devem ser números inteiros de 0 a 100.');if(!validPhone(phone))throw new Error('Informe um WhatsApp com DDD válido.');if(!Number.isFinite(price)||price<=0)throw new Error('Informe um valor de aluguel válido.');
 
    let imageUrl='';
    if(file){
      toast('Enviando foto...');
-     imageUrl=await uploadPropertyImage(file);
+     imageUrl=await uploadPropertyImage(file);pendingPhoto=imageUrl;
    }
 
    await rest('rental_properties',{
@@ -1204,12 +1224,12 @@ async function createRentalProperty(){
      headers:{Prefer:'return=representation'}
    });
 
-   toast('Imóvel publicado no Lucas Agora.');
+   pendingPhoto='';toast('Imóvel publicado no Anuncia Lucas.');
    $('propertyForm').classList.add('hidden');
    $('propTitle').value='';$('propDescription').value='';$('propImage').value='';
    rentalView='available';
    setRentalView('available');
- }catch(e){toast(e.message||'Erro ao publicar imóvel.',true)}
+ }catch(e){if(pendingPhoto)await removePropertyImage(pendingPhoto).catch(()=>{});toast(e.message||'Erro ao publicar imóvel.',true)}
  finally{btn.disabled=false}
 }
 
@@ -1226,9 +1246,10 @@ async function loadRentalProperties(){
 function applyPropertyFilters(){
  const type=$('filterPropertyType').value;
  const neighborhood=$('filterNeighborhood').value.trim().toLowerCase();
- const maxPrice=Number(String($('filterMaxPrice').value||'').replace(',','.'))||0;
+ const maxPrice=parseAmount($('filterMaxPrice').value)||0;
 
  let list=propertyCache.filter(p=>{
+   if(isBlocked(p.owner_id))return false;
    if(type&&p.property_type!==type)return false;
    if(neighborhood&&!String(p.neighborhood||'').toLowerCase().includes(neighborhood))return false;
    if(maxPrice&&Number(p.price)>maxPrice)return false;
@@ -1247,10 +1268,11 @@ function applyPropertyFilters(){
 function renderPropertyCard(p){
  const own=user&&p.owner_id===user.id;
  const phoneDigits=String(p.contact_phone||'').replace(/\D/g,'');
- const wa=phoneDigits.startsWith('55')?phoneDigits:(phoneDigits.length>=10?'55'+phoneDigits:phoneDigits);
- const imageStyle=p.image_url?`style="background-image:linear-gradient(180deg,transparent 45%,rgba(4,18,22,.88)),url('${esc(p.image_url)}')"`:'';
+ const wa=normalizePhone(phoneDigits);
+ const imageUrl=safePropertyImage(p.image_url);
+ const imageStyle=imageUrl?`style="background-image:linear-gradient(180deg,transparent 45%,rgba(4,18,22,.88)),url('${imageUrl}')"`:'';
  return `<div class="propertyCard">
-   <div class="propertyImage ${p.image_url?'':'noPhoto'}" ${imageStyle}>
+   <div class="propertyImage ${imageUrl?'':'noPhoto'}" ${imageStyle}>
      <div class="propertyImageTop">
        <span class="propertyTypeChip">${esc(p.property_type)}</span>
        ${own?'<span class="propertyOwnChip">SEU ANÚNCIO</span>':''}
@@ -1272,6 +1294,7 @@ function renderPropertyCard(p){
        <div><b>${esc(p.contact_name)}</b><br><small>anunciante</small></div>
        <button class="btn blue rentalWhatsBtn" style="width:auto;padding:10px 13px" data-phone="${esc(wa)}">WHATSAPP</button>
      </div>
+     ${!own?safetyActions('imovel',p.id,p.owner_id):''}
      ${own?`<div class="propertyOwnerActions">
        <button class="btn secondary markRentedBtn" data-id="${p.id}">MARCAR ALUGADO</button>
        <button class="btn red deletePropertyBtn" data-id="${p.id}">EXCLUIR</button>
@@ -1289,10 +1312,11 @@ async function markPropertyRented(id){
  }catch(e){toast(e.message,true)}
 }
 
+async function removePropertyImage(url){const safe=safePropertyImage(url);if(!safe)return;const prefix=new URL(safe).pathname.split('/property-images/')[1];if(!prefix.startsWith(user.id+'/'))throw new Error('Foto não pertence à conta.');await rawFetch('/storage/v1/object/property-images',{method:'DELETE',body:{prefixes:[prefix]}})}
 async function deleteRentalProperty(id){
  if(!confirm('Excluir este anúncio?'))return;
  try{
-   await rest(`rental_properties?id=eq.${encodeURIComponent(id)}`,{method:'DELETE'});
+   const property=propertyCache.find(p=>p.id===id);if(property?.owner_id!==user?.id)throw new Error('Anúncio não permitido.');if(property.image_url)await removePropertyImage(property.image_url);await rest(`rental_properties?id=eq.${encodeURIComponent(id)}`,{method:'DELETE'});
    toast('Anúncio excluído.');
    await loadRentalProperties();
  }catch(e){toast(e.message,true)}
@@ -1307,14 +1331,14 @@ async function createHousingRequest(){
    const seekerName=$('wantedName').value.trim();
    const propertyType=$('wantedType').value;
    const neighborhood=$('wantedNeighborhood').value.trim();
-   const maxPrice=Number(String($('wantedMaxPrice').value).replace(',','.'));
+   const maxPrice=parseAmount($('wantedMaxPrice').value);
    const bedrooms=Number($('wantedBedrooms').value||0);
    const petsNeeded=$('wantedPets').value==='true';
    const phone=$('wantedPhone').value.trim();
    const notes=$('wantedNotes').value.trim();
 
    if(!seekerName||!phone)throw new Error('Informe seu nome e WhatsApp.');
-   if(!Number.isFinite(maxPrice)||maxPrice<=0)throw new Error('Informe o valor máximo do aluguel.');
+   if(!validCounts(bedrooms))throw new Error('Informe uma quantidade válida de quartos.');if(!validPhone(phone))throw new Error('Informe um WhatsApp com DDD válido.');if(!Number.isFinite(maxPrice)||maxPrice<=0)throw new Error('Informe o valor máximo do aluguel.');
 
    await rest('housing_requests',{
      method:'POST',
@@ -1343,7 +1367,7 @@ async function createHousingRequest(){
 
 async function loadHousingRequests(){
  try{
-   wantedCache=await rest('housing_requests?status=eq.open&select=*&order=created_at.desc');
+   wantedCache=(await rest('housing_requests?status=eq.open&select=*&order=created_at.desc')).filter(w=>!isBlocked(w.seeker_id));
    $('wantedCount').textContent=String(wantedCache.length);
    const box=$('wantedList');
    if(!wantedCache.length){
@@ -1360,13 +1384,13 @@ async function loadHousingRequests(){
 function renderWantedCard(w){
  const own=user&&w.seeker_id===user.id;
  const phoneDigits=String(w.contact_phone||'').replace(/\D/g,'');
- const wa=phoneDigits.startsWith('55')?phoneDigits:(phoneDigits.length>=10?'55'+phoneDigits:phoneDigits);
+ const wa=normalizePhone(phoneDigits);
  return `<div class="wantedCard">
    <div class="wantedTop">
      <span class="propertyTypeChip">${esc(w.property_type)}</span>
      <span class="wantedBudget">até ${rentalMoney(w.max_price)}</span>
    </div>
-   <h3>${esc(w.seeker_name)} procura imóvel</h3>
+   <h3>${esc(w.seeker_name)} procura imóvel</h3>${!own?safetyActions('procura',w.id,w.seeker_id):''}
    <div class="meta">📍 ${esc(w.neighborhood||'Qualquer bairro')} • mínimo ${Number(w.bedrooms||0)} quarto(s) ${w.pets_needed?'• 🐾 precisa aceitar pet':''}</div>
    ${w.notes?`<div class="propertyDescription" style="margin-top:9px">${esc(w.notes)}</div>`:''}
    <div class="row" style="margin-top:10px">
@@ -1385,12 +1409,30 @@ async function closeHousingRequest(id){
  }catch(e){toast(e.message,true)}
 }
 
-async function respondToRequest(requestId){if(!business?.is_available){toast('Ative sua disponibilidade primeiro.',true);return}const price=prompt('Valor proposto (ex.: 50,00):','50,00');if(price===null)return;const eta=prompt('Tempo estimado em minutos:','20');if(eta===null)return;const message=prompt('Mensagem para o cliente:','Consigo atender. Confirmo o valor final antes do serviço.');if(message===null)return;const p=Number(String(price).replace(',','.')),m=Number(eta);if(!Number.isFinite(p)||p<0||!Number.isFinite(m)||m<0){toast('Valor ou tempo inválido.',true);return}try{await rest('offers?on_conflict=request_id,business_id',{method:'POST',body:{request_id:requestId,business_id:business.id,price:p,eta_minutes:m,message},headers:{Prefer:'resolution=merge-duplicates,return=representation'}});toast('Proposta enviada.');await loadCityRequests()}catch(e){toast(e.message,true)}}
+async function respondToRequest(requestId){if(!business?.is_available){toast('Ative sua disponibilidade primeiro.',true);return}const price=prompt('Valor proposto (ex.: 50,00):','50,00');if(price===null)return;const eta=prompt('Tempo estimado em minutos:','20');if(eta===null)return;const message=prompt('Mensagem para o cliente:','Consigo atender. Confirmo o valor final antes do serviço.');if(message===null)return;const p=parseAmount(price),m=Number(eta);if(!Number.isFinite(p)||p<0||!Number.isFinite(m)||m<0){toast('Valor ou tempo inválido.',true);return}try{await rest('offers?on_conflict=request_id,business_id',{method:'POST',body:{request_id:requestId,business_id:business.id,price:p,eta_minutes:m,message},headers:{Prefer:'resolution=merge-duplicates,return=representation'}});toast('Proposta enviada.');await loadCityRequests()}catch(e){toast(e.message,true)}}
 async function toggleAvailability(){if(!business)return;try{const next=!business.is_available;const rows=await rest(`businesses?id=eq.${encodeURIComponent(business.id)}`,{method:'PATCH',body:{is_available:next},headers:{Prefer:'return=representation'}});business=rows[0]||business;$('availabilitySwitch').classList.toggle('on',!!business.is_available);$('availabilityText').textContent=business.is_available?'🟢 Disponível agora':'⚫ Indisponível';toast(next?'Empresa disponível.':'Empresa pausada.')}catch(e){toast(e.message,true)}}
-function renderAccount(){const info=$('accountInfo'),btn=$('logoutBtn'),role=$('accountRole');if(!session){info.textContent='Você ainda não entrou.';btn.classList.add('hidden');role.textContent='';return}info.innerHTML=`<b>${esc(profile?.full_name||user?.user_metadata?.full_name||user?.email||'Usuário')}</b><br>${esc(user?.email||'')}<br><span class="muted">Pode usar Cliente e Empresa.</span>`;btn.classList.remove('hidden');role.textContent='conta conectada'}
-function logout(showMsg=true){saveSession(null);session=null;user=null;profile=null;business=null;renderAccount();show('home');if(showMsg)toast('Você saiu da conta.')}
+function renderAccount(){ $('requestDeletionBtn').classList.toggle('hidden',!session);$('deletionStatus').textContent='';if(session)loadDeletionStatus();const info=$('accountInfo'),btn=$('logoutBtn'),role=$('accountRole');if(!session){info.textContent='Você ainda não entrou.';btn.classList.add('hidden');role.textContent='';return}info.innerHTML=`<b>${esc(profile?.full_name||user?.user_metadata?.full_name||user?.email||'Usuário')}</b><br>${esc(user?.email||'')}<br><span class="muted">Pode usar Cliente e Empresa.</span>`;btn.classList.remove('hidden');role.textContent='conta conectada'}
+function logout(showMsg=true){saveSession(null);session=null;user=null;profile=null;business=null;propertyCache=[];wantedCache=[];['myRequests','businessRequests','activeJobs','propertiesList','wantedList'].forEach(id=>$(id).replaceChildren());renderAccount();show('home');if(showMsg)toast('Você saiu da conta.')}
 function statusText(s){return ({open:'Aberto',chosen:'Em atendimento',completed:'Concluído',cancelled:'Cancelado'})[s]||s}function formatDate(v){try{return new Date(v).toLocaleString('pt-BR')}catch{return ''}}function money(v){return Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openExternal(url){window.open(url,'_blank','noopener,noreferrer')}
+function parseAmount(value){const raw=String(value).trim();if(!raw)return NaN;const normalized=raw.includes(',')?raw.replace(/\./g,'').replace(',','.'):raw;return /^\d+(?:\.\d{1,2})?$/.test(normalized)?Number(normalized):NaN}
+function validCounts(...values){return values.every(v=>Number.isInteger(v)&&v>=0&&v<=100)}
+function normalizePhone(value){const digits=String(value).replace(/\D/g,'');return digits.length===10||digits.length===11?'55'+digits:digits}
+function validPhone(value){return /^55[1-9]\d\d{8,9}$/.test(normalizePhone(value))}
+function safePropertyImage(value){try{const url=new URL(value);return url.origin===SUPABASE_URL&&!url.username&&!url.password&&!url.search&&!url.hash&&/^\/storage\/v1\/object\/public\/property-images\/[a-zA-Z0-9_/-]+\.(jpg|jpeg|png|webp)$/.test(url.pathname)?url.href:''}catch{return ''}}
+function blockedUsers(){try{const value=JSON.parse(localStorage.getItem('anuncia_blocks_'+(user?.id||'guest'))||'[]');return Array.isArray(value)?value:[]}catch{return []}}
+function isBlocked(id){return Boolean(id)&&blockedUsers().includes(id)}
+function safetyActions(kind,id,author){return `<div class="safetyActions"><button class="reportBtn" data-kind="${esc(kind)}" data-id="${esc(id)}">Denunciar</button>${author?`<button class="blockBtn" data-author="${esc(author)}">Bloquear usuário</button>`:''}</div>`}
+async function syncBlocks(){if(!user)return;try{const rows=await rest(`user_blocks?blocker_id=eq.${user.id}&select=blocked_id`);localStorage.setItem('anuncia_blocks_'+user.id,JSON.stringify(rows.map(row=>row.blocked_id)))}catch(e){toast('Não foi possível sincronizar bloqueios. '+e.message,true)}}
+async function reportContent(kind,id){const reason=prompt('Qual o motivo da denúncia? Descreva o problema (5 a 1.000 caracteres).');if(reason===null)return;if(reason.trim().length<5||reason.length>1000){toast('Descreva o motivo com 5 a 1.000 caracteres.',true);return}try{if(!await ensureUser())throw new Error('Entre para denunciar ou use o suporte.');await rest('content_reports',{method:'POST',body:{reporter_id:user.id,content_type:kind,content_id:id,reason:reason.trim()}});toast('Denúncia registrada para análise do suporte.')}catch(e){toast('Não foi possível registrar. '+e.message,true)}}
+async function blockAuthor(id){if(!confirm('Bloquear este usuário? Os anúncios e novos pedidos ficam ocultos entre vocês. Atendimentos já confirmados continuam acessíveis.'))return;try{await rest('user_blocks',{method:'POST',body:{blocker_id:user.id,blocked_id:id},headers:{Prefer:'resolution=ignore-duplicates'}});await syncBlocks();toast('Usuário bloqueado.');if(!$('rentals').classList.contains('hidden'))await loadRentalView();if(!$('client').classList.contains('hidden'))await loadMyRequests();if(!$('business').classList.contains('hidden'))await loadCityRequests()}catch(e){toast(e.message,true)}}
+async function loadDeletionStatus(){try{const rows=await rest(`account_deletion_requests?user_id=eq.${user.id}&select=requested_at,status`);if(rows.length)$('deletionStatus').textContent='Solicitação recebida em '+formatDate(rows[0].requested_at)+'. O suporte processará a exclusão. Para acompanhar, abra Suporte.'}catch(e){$('deletionStatus').textContent='Não foi possível consultar solicitações. Use o suporte.'}}
+async function requestAccountDeletion(){if(!await ensureUser()){toast('Entre na conta ou use a página de exclusão.',true);return}if(!confirm('Registrar o pedido de exclusão da conta e dos dados? O suporte processará a solicitação. Sua conta não é apagada imediatamente.'))return;try{await rest('account_deletion_requests',{method:'POST',body:{user_id:user.id},headers:{Prefer:'resolution=ignore-duplicates'}});toast('Solicitação de exclusão registrada.');await loadDeletionStatus()}catch(e){toast('Falha ao registrar. Use o canal de suporte. '+e.message,true)}}
+
 function bindUI(){
+ $('requestDeletionBtn').addEventListener('click',requestAccountDeletion);$('unblockAllBtn').addEventListener('click',async()=>{if(!user){toast('Entre para gerenciar os bloqueios.',true);return}await syncBlocks();const count=blockedUsers().length;if(!count){toast('Não há usuários bloqueados.');return}if(confirm(`Desbloquear os ${count} usuário(s)?`)){try{await rest(`user_blocks?blocker_id=eq.${user.id}`,{method:'DELETE'});await syncBlocks();toast('Bloqueios removidos.')}catch(e){toast(e.message,true)}}});
+ document.addEventListener('click',e=>{const report=e.target.closest('.reportBtn');if(report)reportContent(report.dataset.kind,report.dataset.id);const block=e.target.closest('.blockBtn');if(block)blockAuthor(block.dataset.author)});
+
  document.querySelectorAll('.role').forEach(b=>b.addEventListener('click',()=>routeMode(b.dataset.mode)));
  document.querySelectorAll('[data-auth-mode]').forEach(b=>b.addEventListener('click',()=>setAuthMode(b.dataset.authMode)));
  document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));
@@ -1435,10 +1477,10 @@ function bindUI(){
    const cw=e.target.closest('.closeWantedBtn');if(cw)closeHousingRequest(cw.dataset.id);
  });
 }
-async function boot(){bindUI();session=loadStoredSession();if(session){user=session.user||null;await ensureUser().catch(()=>{});await loadProfile().catch(()=>{})}renderAccount();setBadge('V7 • BETA','ok');$('diagnostic').textContent='V7 carregada. Serviços e imóveis locais em Lucas do Rio Verde.'}
-setInterval(async()=>{if(pollBusy||!session)return;pollBusy=true;try{if(!$('client').classList.contains('hidden'))await loadMyRequests();if(!$('business').classList.contains('hidden')&&business)await Promise.all([loadCityRequests(),loadActiveJobs()]);if(!$('rentals').classList.contains('hidden'))await loadRentalView()}finally{pollBusy=false}},5000);
+async function boot(){bindUI();session=loadStoredSession();if(session){user=session.user||null;await ensureUser().catch(()=>{});await loadProfile().catch(()=>{});await syncBlocks()}renderAccount();setBadge('TESTE BETA','ok');$('diagnostic').textContent='Anuncia Lucas 1.0 — teste beta. Serviços e imóveis locais em Lucas do Rio Verde.'}
+setInterval(async()=>{if(pollBusy||!session||document.hidden||!navigator.onLine)return;pollBusy=true;try{if(!$('client').classList.contains('hidden'))await loadMyRequests();if(!$('business').classList.contains('hidden')&&business)await Promise.all([loadCityRequests(),loadActiveJobs()]);if(!$('rentals').classList.contains('hidden'))await loadRentalView()}finally{pollBusy=false}},15000);
 window.addEventListener('DOMContentLoaded',boot);
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=7').catch(()=>{}));
+if(!window.ANUNCIA_NATIVE&&'serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=8').catch(()=>{}));
 </script>
 </body>
 </html>

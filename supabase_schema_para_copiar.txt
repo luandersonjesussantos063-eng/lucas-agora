@@ -1,3 +1,4 @@
+-- HISTORICO DO MVP: NAO REEXECUTAR EM PRODUCAO. Consulte README.md e migracoes atuais.
 -- =========================================================
 -- LUCAS AGORA - BANCO SUPABASE (MVP)
 -- Execute TODO este arquivo no SQL Editor do Supabase.

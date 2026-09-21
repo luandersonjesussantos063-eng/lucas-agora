@@ -1,61 +1,24 @@
-# Lucas Agora V2 — Supabase
+# Anuncia Lucas
 
-Esta versão já está preparada para funcionar entre celulares diferentes.
+Aplicativo local de pedidos de serviços e anúncios/procuras de imóveis de Lucas do Rio Verde, por Nova-byte Tecnologia.
 
-## O que já existe
-- Cadastro e login por e-mail/senha
-- Conta `client` ou `business`
-- Perfil de empresa
-- Cliente publica pedido no banco online
-- Empresas veem pedidos abertos
-- Empresa envia/atualiza proposta
-- Cliente recebe propostas
-- Cliente escolhe uma proposta
-- Atualização Realtime
-- PWA
-- RLS no banco
+Site: https://luandersonjesussantos063-eng.github.io/lucas-agora/
 
-## Passo 1 — Criar projeto no Supabase
-1. Entre em https://supabase.com/
-2. Crie um projeto.
-3. Abra `SQL Editor`.
-4. Cole TODO o conteúdo do arquivo `supabase_schema.sql`.
-5. Execute.
+## Versão de preparação para teste fechado
 
-## Passo 2 — Pegar as credenciais públicas
-No painel do projeto, use o botão/área `Connect` ou API settings e copie:
-- Project URL
-- Publishable key
+- Identidade Anuncia Lucas, ícones e páginas de privacidade, termos, suporte e exclusão.
+- Denúncias registradas em `content_reports`, bloqueios em `user_blocks` e pedidos de exclusão em `account_deletion_requests`.
+- Políticas de acesso revisadas: perfil privado, disponibilidade da própria empresa, propostas protegidas e contato privado condicionado à escolha do cliente.
+- Android com Capacitor 8, `targetSdkVersion` 36, identificador `br.com.novabytesolucoes.anuncialucas`.
 
-Abra `config.js` e substitua:
-- `COLE_SUA_PROJECT_URL_AQUI`
-- `COLE_SUA_PUBLISHABLE_KEY_AQUI`
+O projeto Android e os testes são entregues no pacote de código-fonte. A chave de assinatura é entregue separadamente e **nunca deve ser adicionada a este repositório**.
 
-NUNCA coloque `service_role`, secret key ou senha do banco em `config.js`.
+## Banco existente
 
-## Passo 3 — Auth
-Por padrão, o Supabase pode exigir confirmação de e-mail.
-Para testes, você pode confirmar o e-mail recebido.
-Em produção, mantenha confirmação de e-mail.
+**Não execute novamente `supabase_schema.sql` nem `supabase_schema_para_copiar.txt` em produção. São arquivos históricos do MVP e não refletem o esquema atual.** As alterações de 21/09/2026 já foram aplicadas ao projeto. O pacote de código-fonte contém suas migrações e testes com transações desfeitas ao final.
 
-## Passo 4 — Publicar
-Envie os arquivos para a raiz do repositório GitHub Pages:
-- index.html
-- config.js
-- manifest.json
-- sw.js
+## Operação antes de publicar
 
-## Teste real
-1. Celular A: crie conta Cliente.
-2. Publique um pedido.
-3. Celular B: crie conta Empresa.
-4. Complete o perfil da empresa.
-5. Veja o pedido do Cliente.
-6. Responda com preço e prazo.
-7. O Celular A recebe a proposta.
-8. O cliente escolhe a empresa.
+O responsável deve acompanhar denúncias e pedidos de exclusão no painel do Supabase e no e-mail luandersonjesussantos063@gmail.com. A solicitação no app não apaga imediatamente a conta: o suporte confirma e processa, removendo também fotos do Storage e revogando sessões antes de excluir o usuário.
 
-## Segurança
-A V2 usa Row Level Security.
-O navegador usa apenas a `publishable key`.
-Nunca publique `service_role` / secret key.
+Não há pagamentos nem planos pagos nesta versão. O conteúdo é criado por usuários. O teste fechado, a ficha de Segurança dos dados e a aprovação do Google Play ainda precisam ser concluídos.
