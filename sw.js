@@ -1,9 +1,9 @@
-const CACHE_NAME = 'anuncia-lucas-v11';
+const CACHE_NAME = 'anuncia-lucas-v12';
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.json',
-  './icon.svg?v=11'
+  './icon.svg?v=12'
 ];
 
 self.addEventListener('install', (event) => {
