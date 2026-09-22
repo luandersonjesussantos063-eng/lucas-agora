@@ -1,4 +1,4 @@
-const CACHE_NAME = 'anuncia-lucas-v9.5';
+const CACHE_NAME = 'anuncia-lucas-v10';
 const APP_SHELL = [
   './',
   './index.html',
