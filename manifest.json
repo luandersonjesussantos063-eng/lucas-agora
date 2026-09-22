@@ -3,23 +3,7 @@
   "short_name": "Anuncia Lucas",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#06161b",
+  "background_color": "#061419",
   "theme_color": "#071a21",
-  "description": "Serviços, empresas, profissionais e imóveis de Lucas do Rio Verde em um só lugar.",
-  "id": "./",
-  "scope": "./",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ]
+  "description": "Classificados locais de Lucas do Rio Verde: empregos, imóveis, veículos, produtos e serviços."
 }
