@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#061419",
   "theme_color": "#071a21",
-  "description": "Empregos e imóveis de Lucas do Rio Verde em um só lugar.",
+  "description": "Classificados locais de Lucas do Rio Verde: empregos, imóveis, veículos, produtos, serviços e comércio.",
   "icons": [
     {
       "src": "./icon.svg",
