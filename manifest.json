@@ -5,10 +5,10 @@
   "display": "standalone",
   "background_color": "#061419",
   "theme_color": "#071a21",
-  "description": "Classificados locais de Lucas do Rio Verde: empregos, imóveis, veículos, produtos, serviços e comércio.",
+  "description": "Classificados locais de Lucas do Rio Verde para vagas de emprego e imóveis para alugar ou comprar.",
   "icons": [
     {
-      "src": "./icon.svg",
+      "src": "./icon.svg?v=11",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
